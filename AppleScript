@@ -1,15 +1,22 @@
 (* 
 鱫鰰裸軟 - 鱫鰰鏡之鰣空 
 
-Apple.com/Mac-Pro                      macOS Catalina 
+Apple.com/Mac-Pro 
 Apple.com/Pro-Display-XDR 
+
+自訂沝女鰰的 New MacBook Air 
+
+macOS Catalina 
+
+bit.ly/下載_Install_macOS_High_Sierra_iso 
+bit.ly/下載_Install_macOS_Sierra_iso 
 
 無簽章之(簡易裸程式)吥鰎議鯲 macOS Mojave 鯀統使用唷🤣 
 鰎議鯲   macOS High Sierra     macOS Sierra     macOS El Capitan   鯀統使用唷💋 
 
 AppleScript 
 下載: bit.ly/鱫鰰鏡之鰣空 ¬ 
-{"macOS實鰣鮦步 & 重新鮟裝rsync", "YouTube下載 & 影音轉換MP3 & RamDisk", "macOS開機鰈鱮ISO鯯作 & 開啟鱫鰰鏡之鰣空腳本"} 
+{"macOS實鰣鮦步 & iCloudDrive使用者鮦步 & 重新鮟裝rsync", "YouTube下載 & 影音轉換MP3 & RamDisk", "macOS開機鰈鱮ISO鯯作 & 開啟鱫鰰鏡之鰣空腳本"} 
 
 倘鰙沝女鰰對macOS實鰣鮦步有多開需鯄魺下載使用唷💋 
 倘鰙沝女鰰首次鰎䲞RamDisk鱞請沝女鰰關閉瀏灠器鱮所有程式再執行唷💋 
@@ -32,7 +39,7 @@ https://www.youtube.com/channel/UCdQlnh4GCQSGXmTPQg5MKGQ/videos
 JuliaComputing.com    Julialang.org    鮢鯏𩸋 (𩸍魿行版)   
 *)
 ---------------------------------∞ 鱫鰰鏡之鰣空 ∞----------------------------------------ON. 
-global ErosTSMirror, VideoDownloadConversion, IsoOpenOption, macOSBoot, OpenScript, rsyncOption, Update_rsync, ErosRsyncMode, SingleRsync, ErosRealTimeRsync, ErosSource, ErosDest, ErosRealTimeRsyncLogsFile, APPitemPath, rsyncPath_ParametersPlus, rsyncPath_ParametersMinus, TerminalNotifier, isDone, itemPath, itemProgress, firstRun, RT_Seconds, RT_Option, RT_Option_HDW, errmsg, errnbr
+global ErosTSMirror, VideoDownloadConversion, IsoOpenOption, macOSBoot, OpenScript, rsyncOption, iCloudSyncPath, Update_rsync, ErosRsyncMode, SingleRsync, ErosRealTimeRsync, ErosSource, ErosDest, ErosRealTimeRsyncLogsFile, APPitemPath, rsyncPath_ParametersPlus, rsyncPath_ParametersMinus, TerminalNotifier, isDone, itemPath, itemProgress, firstRun, RT_Seconds, RT_Option, RT_Option_HDW, errmsg, errnbr
 global ErosRsyncMode, firstRun, RT_Seconds, ErosRealTimeRsync, rsyncPath_ParametersPlus, ErosSource, ErosDest, ErosRealTimeRsyncLogsFile, errmsg, errnbr
 global Update_rsync, rsyncVersion, DownloadDestination, DownloadDestination1, rsync_Path, rsync, rsync_Path_bin, rsync_Path_macOS, DDrsyncVersion, isDone, itemPath, itemProgress, TerminalNotifier, pdf, SingleRsync, errmsg, errnbr
 global SingleRsync, ErosRealTimeRsync, ErosSource, ErosDest, ErosRealTimeRsyncLogsFile, APPitemPath, rsyncPath_ParametersPlus, rsyncPath_ParametersMinus, TerminalNotifier, isDone, itemPath, itemProgress, errmsg, errnbr
@@ -54,7 +61,7 @@ on run
 		tell application "Finder"
 			set {button returned:ErosTSMirror} to ¬
 				display dialog ("請嚫鱫的沝女鰰選擇 鱫鰰裸軟 選項唷💋") buttons ¬
-					{"macOS實鰣鮦步 & 重新鮟裝rsync", "YouTube下載 & 影音轉換MP3 & RamDisk", "macOS開機鰈鱮ISO鯯作 & 開啟鱫鰰鏡之鰣空腳本"} with title ¬
+					{"macOS實鰣鮦步 & iCloudDrive使用者鮦步 & 重新鮟裝rsync", "YouTube下載 & 影音轉換MP3 & RamDisk", "macOS開機鰈鱮ISO鯯作 & 開啟鱫鰰鏡之鰣空腳本"} with title ¬
 					{"鱫鰰鏡之鰣空"}
 			
 			if ErosTSMirror is "YouTube下載 & 影音轉換MP3 & RamDisk" then run script VideoDownloadConversion
@@ -68,13 +75,20 @@ on run
 				if IsoOpenOption is "開啟鱫鰰鏡之鰣空腳本" then run script OpenScript
 			end if
 			
-			if ErosTSMirror is "macOS實鰣鮦步 & 重新鮟裝rsync" then
+			if ErosTSMirror is "macOS實鰣鮦步 & iCloudDrive使用者鮦步 & 重新鮟裝rsync" then
 				set {button returned:rsyncOption} to ¬
 					display dialog ("請嚫鱫的沝女鰰選擇 鱫鰰macOS實鰣鮦步 選項唷💋") buttons ¬
-						{"macOS實鰣鮦步", "重新鮟裝rsync"} with title ¬
+						{"macOS實鰣鮦步", "iCloudDrive使用者鮦步", "重新鮟裝rsync"} with title ¬
 						{"鱫鰰鏡之鰣空"}
 				
 				if rsyncOption is "重新鮟裝rsync" then run script Update_rsync
+				
+				if rsyncOption is "iCloudDrive使用者鮦步" then
+					set iCloudSyncPath to POSIX path of (path to me as text) & ("Contents/Resources/Scripts/鱫鰰iCloudDrive使用者鮦步.app")
+					set iCloudSyncPath to quoted form of iCloudSyncPath
+					do shell script ("open -n " & iCloudSyncPath)
+					continue quit
+				end if
 				
 				if rsyncOption is "macOS實鰣鮦步" then
 					set {button returned:ErosRsyncMode} to ¬
@@ -502,6 +516,7 @@ script InstallYouTubeDl
 	try
 		set YouTubeDl_Path to POSIX path of (path to me as text) & ("Contents/MacOS/youtube-dl")
 		set YouTubeDl_Path to quoted form of YouTubeDl_Path
+		set inBackground to " &> /dev/null &"
 		(do shell script " 
 rm -rf " & YouTubeDl_Path & " ; 
 curl -L https://yt-dl.org/downloads/latest/youtube-dl -o " & YouTubeDl_Path & " ; 
