@@ -16,7 +16,7 @@ bit.ly/下載_Install_macOS_Sierra_iso
 
 AppleScript 
 下載: bit.ly/鱫鰰鏡之鰣空 ¬ 
-{"macOS實鰣鮦步 & iCloudDrive使用者鮦步 & 重新鮟裝rsync", "YouTube下載 & 影音轉換MP3 & RamDisk", "macOS開機鰈鱮ISO鯯作 & 開啟鱫鰰鏡之鰣空腳本"} 
+{"macOS實鰣鮦步 & iCloudDrive使用者鮦步 & 重新鮟裝rsync", "YouTube下載 & 影音轉換MP3 & RamDisk", "macOS開機鰈鱮ISO鯯作 & APFS助手 & 開啟鱫鰰鏡之鰣空腳本"} 
 
 倘鰙沝女鰰對macOS實鰣鮦步有多開需鯄魺下載使用唷💋 
 倘鰙沝女鰰首次鰎䲞RamDisk鱞請沝女鰰關閉瀏灠器鱮所有程式再執行唷💋 
@@ -53,6 +53,9 @@ global createRamDisk, RamDiskSize, RamDiskName, RamDiskImg, RamDisk, RamDiskShel
 global macOSBoot, macOSBootISO, macOSBootUSB_BackgroundProcessing, errmsg, errnbr
 global macOSBootUSB_BackgroundProcessing, InstallmacOS, ErosDestUSB, CreateInstallMedia, NewVersion, OldVersion, inBackground, BackgroundProcessing, isDone, itemPath, itemProgress, TerminalNotifier, errmsg, errnbr
 global macOSBootISO, InstallmacOS, ISOsize, VolumesEros, InstallmacOSpath, CreateInstallMedia, InstallmacOSname, InstallmacOSnameExtension, inBackground, isDone, itemPath, itemProgress, TerminalNotifier, errmsg, errnbr
+global APFShelper, APFS_Option, deleteContainer, deleteVolume, OpenScript, errmsg, errnbr
+global deleteContainer, GetDiskNumber, DiskNumbering, TerminalNotifier, DiskUtility, errmsg, errnbr
+global deleteVolume, GetDiskNumber, DiskNumbering, TerminalNotifier, DiskUtility, errmsg, errnbr
 global OpenScript, OpenAppScript, TerminalNotifier, errmsg, errnbr
 
 
@@ -61,17 +64,18 @@ on run
 		tell application "Finder"
 			set {button returned:ErosTSMirror} to ¬
 				display dialog ("請嚫鱫的沝女鰰選擇 鱫鰰裸軟 選項唷💋") buttons ¬
-					{"macOS實鰣鮦步 & iCloudDrive使用者鮦步 & 重新鮟裝rsync", "YouTube下載 & 影音轉換MP3 & RamDisk", "macOS開機鰈鱮ISO鯯作 & 開啟鱫鰰鏡之鰣空腳本"} with title ¬
+					{"macOS實鰣鮦步 & iCloudDrive使用者鮦步 & 重新鮟裝rsync", "YouTube下載 & 影音轉換MP3 & RamDisk", "macOS開機鰈鱮ISO鯯作 & APFS助手 & 開啟鱫鰰鏡之鰣空腳本"} with title ¬
 					{"鱫鰰鏡之鰣空"}
 			
 			if ErosTSMirror is "YouTube下載 & 影音轉換MP3 & RamDisk" then run script VideoDownloadConversion
 			
-			if ErosTSMirror is "macOS開機鰈鱮ISO鯯作 & 開啟鱫鰰鏡之鰣空腳本" then
+			if ErosTSMirror is "macOS開機鰈鱮ISO鯯作 & APFS助手 & 開啟鱫鰰鏡之鰣空腳本" then
 				set {button returned:IsoOpenOption} to ¬
 					display dialog ("請嚫鱫的沝女鰰選擇 鱫鰰裸軟 選項唷💋") buttons ¬
-						{"macOS開機鰈鱮ISO鯯作", "開啟鱫鰰鏡之鰣空腳本"} with title ¬
+						{"macOS開機鰈鱮ISO鯯作", "APFS助手", "開啟鱫鰰鏡之鰣空腳本"} with title ¬
 						{"鱫鰰鏡之鰣空"}
 				if IsoOpenOption is "macOS開機鰈鱮ISO鯯作" then run script macOSBoot
+				if IsoOpenOption is "APFS助手" then run script APFShelper
 				if IsoOpenOption is "開啟鱫鰰鏡之鰣空腳本" then run script OpenScript
 			end if
 			
@@ -951,13 +955,85 @@ rm /tmp/macOS.cdr.dmg ; " & inBackground with administrator privileges}
 		continue quit
 	end try
 end script
+----------------------------∞ 鱫鰰APFS助手 ∞------------------------------ON. 
+script APFShelper
+	try
+		tell application "Finder"
+			set {button returned:APFS_Option} to ¬
+				display dialog ("請嚫鱫的沝女鰰選擇 鱫鰰APFS助手 選項唷💋") buttons ¬
+					{"刪除APFS容器並將舊磁盤重新格式化為HFS", "從其APFS容器中刪除APFS卷"} with title ¬
+					{"鱫鰰APFS助手"}
+			if APFS_Option is "刪除APFS容器並將舊磁盤重新格式化為HFS" then run script deleteContainer
+			if APFS_Option is "從其APFS容器中刪除APFS卷" then run script deleteVolume
+		end tell
+	on error errmsg number errnbr
+		if errnbr = -128 then continue quit
+		continue quit
+	end try
+end script
+-------------------∞ 刪除APFS容器並將舊磁盤重新格式化為HFS ∞--------------------ON. 
+script deleteContainer
+	try
+		tell application "Finder"
+			display dialog (" 
+請嚫鱫的沝女鰰記住欲變鯁之APFS的磁鰈號唷💋 
+例: disk1s2 ")
+			set GetDiskNumber to do shell script ("diskutil list ")
+			display dialog GetDiskNumber
+			set DiskNumbering to ¬
+				display dialog {" 
+請嚫鱫的鰛鰇鱮美鱺沝女鰰鰎魞欲刪除APFS的磁鰈編號唷💋"} default answer ("") buttons ¬
+					{"嗯哼。。好的唷💋"} default button ("嗯哼。。好的唷💋")
+			set DiskNumbering to {text returned of the result}
+			if DiskNumbering is "" then return continue quit
+			do shell script ("diskutil apfs deletecontainer " & DiskNumbering)
+			set TerminalNotifier to POSIX path of (path to me as text) & ("Contents/MacOS/terminal-notifier")
+			set TerminalNotifier to quoted form of TerminalNotifier
+			do shell script (TerminalNotifier & " -title APFS已變鯁𩻟HFS磁鰈鰳唷💋")
+			set DiskUtility to quoted form of ("/Applications/Utilities/Disk Utility.app")
+			do shell script ("open " & DiskUtility)
+		end tell
+		continue quit
+	on error errmsg number errnbr
+		if errnbr = -128 then continue quit
+		continue quit
+	end try
+end script
+--------------------------∞ 從其APFS容器中刪除APFS卷 ∞---------------------------ON. 
+script deleteVolume
+	try
+		tell application "Finder"
+			display dialog (" 
+請嚫鱫的沝女鰰記住欲變鯁之APFS的磁鰈號唷💋 
+例: disk1s2 ")
+			set GetDiskNumber to do shell script ("diskutil list ")
+			display dialog GetDiskNumber
+			set DiskNumbering to ¬
+				display dialog {" 
+請嚫鱫的鰛鰇鱮美鱺沝女鰰鰎魞欲刪除APFS的磁鰈編號唷💋"} default answer ("") buttons ¬
+					{"嗯哼。。好的唷💋"} default button ("嗯哼。。好的唷💋")
+			set DiskNumbering to {text returned of the result}
+			if DiskNumbering is "" then return continue quit
+			do shell script ("diskutil apfs deleteVolume " & DiskNumbering)
+			set TerminalNotifier to POSIX path of (path to me as text) & ("Contents/MacOS/terminal-notifier")
+			set TerminalNotifier to quoted form of TerminalNotifier
+			do shell script (TerminalNotifier & " -title 已刪除APFS磁鰈鰳唷💋")
+			set DiskUtility to quoted form of ("/Applications/Utilities/Disk Utility.app")
+			do shell script ("open " & DiskUtility)
+		end tell
+		continue quit
+	on error errmsg number errnbr
+		if errnbr = -128 then continue quit
+		continue quit
+	end try
+end script
 ------------------------ 開啟鱫鰰鏡之鰣空腳本 ------------------------ON. 
 script OpenScript
 	try
 		tell application "Finder"
 			set OpenAppScript to POSIX path of (path to me as text) & ("Contents/Resources/Scripts/main.scpt")
 			set OpenAppScript to quoted form of OpenAppScript
-			do shell script ("open " & OpenAppScript & ";")
+			do shell script ("open " & OpenAppScript)
 			set TerminalNotifier to POSIX path of (path to me as text) & ("Contents/MacOS/terminal-notifier")
 			set TerminalNotifier to quoted form of TerminalNotifier
 			do shell script (TerminalNotifier & " -title 腳本已開啟鰳唷💋")
