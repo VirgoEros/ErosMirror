@@ -42,7 +42,7 @@ JuliaComputing.com    Julialang.org    鮢鯏𩸋 (𩸍魿行版)
 global ErosTSMirror, VideoDownloadConversion, ISO_APFS_OpenScript_Option, macOSBoot, APFShelper, OpenScript, rsyncOption, Update_rsync, iCloudSyncPath, rsyncOption, ErosRsyncMode, SingleRsync, ErosRealTimeRsync, SyncSource, SyncDest, ErosRealTimeRsyncLogsFile, APPitemPath, rsyncPath_ParametersPlus, rsyncPath_ParametersMinus, TerminalNotifier, isDone, itemPath, itemProgress, firstRun, RT_Seconds, RT_Option, RT_Option_HDW, errmsg, errnbr
 global ErosRsyncMode, firstRun, RT_Seconds, ErosRealTimeRsync, rsyncPath_ParametersPlus, SyncSource, SyncDest, ErosRealTimeRsyncLogsFile, RT_Option, RT_Option_HDW, errmsg, errnbr
 global Update_rsync, rsyncVersion, DownloadDestination, DownloadDestination1, rsync_Path, rsync, rsync_Path_bin, rsync_Path_macOS, DDrsyncVersion, isDone, itemPath, itemProgress, TerminalNotifier, pdf, SingleRsync, errmsg, errnbr
-global SingleRsync, ErosRealTimeRsync, ErosSource, ErosDest, ErosRealTimeRsyncLogsFile, APPitemPath, rsyncPath_ParametersPlus, rsyncPath_ParametersMinus, TerminalNotifier, isDone, itemPath, itemProgress, errmsg, errnbr
+global SingleRsync, ErosRealTimeRsync, SyncSource, SyncDest, ErosRealTimeRsyncLogsFile, APPitemPath, rsyncPath_ParametersPlus, rsyncPath_ParametersMinus, TerminalNotifier, isDone, itemPath, itemProgress, errmsg, errnbr
 global VideoDownloadConversion, UpdateYouTubeDL, YouTubeVideoDownloads, InstallYouTubeDl, VideoConversion, createRamDisk, errmsg, errnbr
 global InstallYouTubeDl, YouTubeDl_Path, isDone, itemPath, itemProgress, TerminalNotifier, APPmacOSPath, YouTubeVideoDownloads, errmsg, errnbr
 global YouTubeVideoDownloads, VideoURL, APPitemPath, inBackground, YouTubeURL, DownloadDestination, TerminalNotifier, isDone, itemPath, itemProgress, errmsg, errnbr
@@ -379,10 +379,10 @@ script SingleRsync
 請鰛鰇鱮美鱺沝療癒鯀女鰰選擇欲鮦步之模式唷💋"} buttons ¬
 					{"雙向A<+>B鮦步", "鱓向A+>B鮦步", "鱓向A->B鮦步"} with title ¬
 					{"鱓次鮦步"}
-			set ErosSource to ¬
+			set SyncSource to ¬
 				(choose folder with prompt " 
 請沝療癒鯀女鰰選擇 A:來源資料夾 唷💋" default location (path to (users folder)))
-			set ErosDest to ¬
+			set SyncDest to ¬
 				(choose folder with prompt " 
 請沝療癒鯀女鰰選擇 B:目標資料夾 唷💋" default location (path to (startup disk)))
 			set ErosRealTimeRsyncLogsFile to ¬
@@ -403,10 +403,10 @@ script SingleRsync
 				do shell script (TerminalNotifier & " -title 鮦步中唷💋")
 				(do shell script ¬
 					rsyncPath_ParametersPlus & ¬
-					quoted form of POSIX path of ErosSource & " " & ¬
-					quoted form of POSIX path of ErosDest & " " & ¬
-					quoted form of POSIX path of ErosDest & " " & ¬
-					quoted form of POSIX path of ErosSource)
+					quoted form of POSIX path of SyncSource & " " & ¬
+					quoted form of POSIX path of SyncDest & " " & ¬
+					quoted form of POSIX path of SyncDest & " " & ¬
+					quoted form of POSIX path of SyncSource)
 				delay 1
 				set isDone to false
 				set itemPath to ("rsync ")
@@ -425,7 +425,7 @@ script SingleRsync
 				end repeat
 				if isDone is true then
 					do shell script (TerminalNotifier & " -title 鮦步鯇成鰳唷💋")
-					do shell script ("open " & quoted form of POSIX path of ErosDest)
+					do shell script ("open " & quoted form of POSIX path of SyncDest)
 					continue quit
 				end if
 			end if
@@ -433,8 +433,8 @@ script SingleRsync
 				do shell script (TerminalNotifier & " -title 鮦步中唷💋")
 				(do shell script ¬
 					rsyncPath_ParametersPlus & ¬
-					quoted form of POSIX path of ErosSource & " " & ¬
-					quoted form of POSIX path of ErosDest)
+					quoted form of POSIX path of SyncSource & " " & ¬
+					quoted form of POSIX path of SyncDest)
 				delay 1
 				set isDone to false
 				set itemPath to ("rsync ")
@@ -453,7 +453,7 @@ script SingleRsync
 				end repeat
 				if isDone is true then
 					do shell script (TerminalNotifier & " -title 鮦步鯇成鰳唷💋")
-					do shell script ("open " & quoted form of POSIX path of ErosDest)
+					do shell script ("open " & quoted form of POSIX path of SyncDest)
 					continue quit
 				end if
 			end if
@@ -461,8 +461,8 @@ script SingleRsync
 				do shell script (TerminalNotifier & " -title 鮦步中唷💋")
 				(do shell script ¬
 					rsyncPath_ParametersMinus & ¬
-					quoted form of POSIX path of ErosSource & " " & ¬
-					quoted form of POSIX path of ErosDest)
+					quoted form of POSIX path of SyncSource & " " & ¬
+					quoted form of POSIX path of SyncDest)
 				delay 1
 				set isDone to false
 				set itemPath to ("rsync ")
@@ -481,7 +481,7 @@ script SingleRsync
 				end repeat
 				if isDone is true then
 					do shell script (TerminalNotifier & " -title 鮦步鯇成鰳唷💋")
-					do shell script ("open " & quoted form of POSIX path of ErosDest)
+					do shell script ("open " & quoted form of POSIX path of SyncDest)
 					continue quit
 				end if
 			end if
@@ -1056,4 +1056,3 @@ end script
 
 
 -- 
- 
