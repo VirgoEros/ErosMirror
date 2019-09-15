@@ -54,8 +54,8 @@ global macOSBoot, macOSBootISO, macOSBootUSB_BackgroundProcessing, errmsg, errnb
 global macOSBootUSB_BackgroundProcessing, InstallmacOS, ErosDestUSB, CreateInstallMedia, NewVersion, OldVersion, inBackground, BackgroundProcessing, isDone, itemPath, itemProgress, TerminalNotifier, errmsg, errnbr
 global macOSBootISO, InstallmacOS, ISOsize, VolumesEros, InstallmacOSpath, CreateInstallMedia, InstallmacOSname, InstallmacOSnameExtension, inBackground, isDone, itemPath, itemProgress, TerminalNotifier, errmsg, errnbr
 global APFShelper, APFS_Option, deleteContainer, deleteVolume, OpenScript, errmsg, errnbr
-global deleteContainer, DiskNumbering, TerminalNotifier, DiskUtility, errmsg, errnbr
-global deleteVolume, DiskNumbering, TerminalNotifier, DiskUtility, errmsg, errnbr
+global deleteContainer, errmsg, errnbr
+global deleteVolume, errmsg, errnbr
 global OpenScript, OpenAppScript, TerminalNotifier, errmsg, errnbr
 
 
@@ -982,20 +982,9 @@ script deleteContainer
 				if not (exists window 1) then reopen
 				activate
 				set size of window 1 to {550, 1200}
-				(do script ("diskutil apfs list ") in window 1)
+				(do script ("diskutil list ") in window 1)
+				tell application "System Events" to key code 2 & 34 & 1 & 40 & 32 & 17 & 34 & 37 & 49 & 0 & 35 & 3 & 1 & 49 & 2 & 14 & 37 & 14 & 17 & 14 & 8 & 31 & 45 & 17 & 0 & 34 & 45 & 14 & 15 & 49 & 2 & 34 & 1 & 40
 			end tell
-			set DiskNumbering to ¬
-				display dialog {" 
-請嚫鱫的鰛鰇鱮美鱺沝女鰰鰎魞欲刪除APFS的磁鰈編號唷💋"} default answer ("") buttons ¬
-					{"嗯哼。。好的唷💋"} default button ("嗯哼。。好的唷💋")
-			set DiskNumbering to {text returned of the result}
-			if DiskNumbering is "" then return continue quit
-			do shell script ("diskutil apfs deletecontainer " & DiskNumbering)
-			set TerminalNotifier to POSIX path of (path to me as text) & ("Contents/MacOS/terminal-notifier")
-			set TerminalNotifier to quoted form of TerminalNotifier
-			do shell script (TerminalNotifier & " -title APFS已變鯁𩻟HFS磁鰈鰳唷💋")
-			set DiskUtility to quoted form of ("/Applications/Utilities/Disk Utility.app")
-			do shell script ("open " & DiskUtility)
 			continue quit
 		end tell
 	on error errmsg number errnbr
@@ -1014,20 +1003,9 @@ script deleteVolume
 				if not (exists window 1) then reopen
 				activate
 				set size of window 1 to {550, 1200}
-				(do script ("diskutil apfs list ") in window 1)
+				(do script ("diskutil list ") in window 1)
+				tell application "System Events" to key code 2 & 34 & 1 & 40 & 32 & 17 & 34 & 37 & 49 & 0 & 35 & 3 & 1 & 49 & 2 & 14 & 37 & 14 & 17 & 14 & 9 & 31 & 37 & 32 & 46 & 14 & 49 & 2 & 34 & 1 & 40
 			end tell
-			set DiskNumbering to ¬
-				display dialog {" 
-請嚫鱫的鰛鰇鱮美鱺沝女鰰鰎魞欲刪除APFS的磁鰈編號唷💋"} default answer ("") buttons ¬
-					{"嗯哼。。好的唷💋"} default button ("嗯哼。。好的唷💋")
-			set DiskNumbering to {text returned of the result}
-			if DiskNumbering is "" then return continue quit
-			do shell script ("diskutil apfs deleteVolume " & DiskNumbering)
-			set TerminalNotifier to POSIX path of (path to me as text) & ("Contents/MacOS/terminal-notifier")
-			set TerminalNotifier to quoted form of TerminalNotifier
-			do shell script (TerminalNotifier & " -title 已刪除APFS磁鰈鰳唷💋")
-			set DiskUtility to quoted form of ("/Applications/Utilities/Disk Utility.app")
-			do shell script ("open " & DiskUtility)
 			continue quit
 		end tell
 	on error errmsg number errnbr
