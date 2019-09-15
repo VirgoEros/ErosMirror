@@ -974,19 +974,17 @@ end script
 -------------------∞ 刪除APFS容器並將舊磁盤重新格式化為HFS ∞--------------------ON. 
 script deleteContainer
 	try
-		tell application "Finder"
-			display dialog (" 
-請嚫鱫的沝女鰰記住欲變鯁之APFS的磁鰈號唷💋 
+		tell application "Finder" to display dialog (" 
+請嚫鱫的沝女鰰鰎魞欲變鯁之APFS的磁鰈號唷💋 
 例: disk1s2 ")
-			tell application "Terminal"
-				if not (exists window 1) then reopen
-				activate
-				set size of window 1 to {550, 1200}
-				(do script ("diskutil list ") in window 1)
-				tell application "System Events" to key code 2 & 34 & 1 & 40 & 32 & 17 & 34 & 37 & 49 & 0 & 35 & 3 & 1 & 49 & 2 & 14 & 37 & 14 & 17 & 14 & 8 & 31 & 45 & 17 & 0 & 34 & 45 & 14 & 15 & 49 & 2 & 34 & 1 & 40
-			end tell
-			continue quit
+		tell application "Terminal"
+			if not (exists window 1) then reopen
+			activate
+			set size of window 1 to {550, 1200}
+			(do script ("diskutil list ") in window 1)
+			tell application "System Events" to key code 2 & 34 & 1 & 40 & 32 & 17 & 34 & 37 & 49 & 0 & 35 & 3 & 1 & 49 & 2 & 14 & 37 & 14 & 17 & 14 & 8 & 31 & 45 & 17 & 0 & 34 & 45 & 14 & 15 & 49 & 2 & 34 & 1 & 40
 		end tell
+		continue quit
 	on error errmsg number errnbr
 		if errnbr = -128 then continue quit
 		continue quit
@@ -995,19 +993,17 @@ end script
 --------------------------∞ 從其APFS容器中刪除APFS卷 ∞---------------------------ON. 
 script deleteVolume
 	try
-		tell application "Finder"
-			display dialog (" 
-請嚫鱫的沝女鰰記住欲變鯁之APFS的磁鰈號唷💋 
+		tell application "Finder" to display dialog (" 
+請嚫鱫的沝女鰰鰎魞欲變鯁之APFS的磁鰈號唷💋 
 例: disk1s2 ")
-			tell application "Terminal"
-				if not (exists window 1) then reopen
-				activate
-				set size of window 1 to {550, 1200}
-				(do script ("diskutil list ") in window 1)
-				tell application "System Events" to key code 2 & 34 & 1 & 40 & 32 & 17 & 34 & 37 & 49 & 0 & 35 & 3 & 1 & 49 & 2 & 14 & 37 & 14 & 17 & 14 & 9 & 31 & 37 & 32 & 46 & 14 & 49 & 2 & 34 & 1 & 40
-			end tell
-			continue quit
+		tell application "Terminal"
+			if not (exists window 1) then reopen
+			activate
+			set size of window 1 to {550, 1200}
+			(do script ("diskutil list ") in window 1)
+			tell application "System Events" to key code 2 & 34 & 1 & 40 & 32 & 17 & 34 & 37 & 49 & 0 & 35 & 3 & 1 & 49 & 2 & 14 & 37 & 14 & 17 & 14 & 9 & 31 & 37 & 32 & 46 & 14 & 49 & 2 & 34 & 1 & 40
 		end tell
+		continue quit
 	on error errmsg number errnbr
 		if errnbr = -128 then continue quit
 		continue quit
