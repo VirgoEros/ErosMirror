@@ -39,10 +39,10 @@ https://www.youtube.com/channel/UCdQlnh4GCQSGXmTPQg5MKGQ/videos
 JuliaComputing.com    Julialang.org    鮢鯏𩸋 (𩸍魿行版)   
 *)
 ---------------------------------∞ 鱫鰰鏡之鰣空 ∞----------------------------------------ON. 
-global ErosTSMirror, VideoDownloadConversion, ISO_APFS_OpenScript_Option, macOSBoot, APFShelper, OpenScript, rsyncOption, Update_rsync, iCloudSyncPath, rsyncOption, ErosRsyncMode, SingleRsync, ErosRealTimeRsync, SyncSource, SyncDest, ErosRealTimeRsyncLogsFile, APPitemPath, rsyncPath_ParametersPlus, rsyncPath_ParametersMinus, TerminalNotifier, isDone, itemPath, itemProgress, firstRun, RT_Seconds, RT_Option, RT_Option_HDW, errmsg, errnbr
-global ErosRsyncMode, firstRun, RT_Seconds, ErosRealTimeRsync, rsyncPath_ParametersPlus, SyncSource, SyncDest, ErosRealTimeRsyncLogsFile, RT_Option, RT_Option_HDW, errmsg, errnbr
+global ErosTSMirror, VideoDownloadConversion, ISO_APFS_OpenScript_Option, macOSBoot, APFShelper, OpenScript, rsyncOption, Update_rsync, iCloudSyncPath, rsyncOption, RealTimeSyncMode, SingleSync, RealTimeSync, SyncSource, SyncDest, RealTimeSyncLogsFile, APPitemPath, rsyncPath_ParametersPlus, rsyncPath_ParametersMinus, TerminalNotifier, isDone, itemPath, itemProgress, firstRun, RT_Seconds, RT_Option, RT_Option_HDW, errmsg, errnbr
+global RealTimeSyncMode, firstRun, RT_Seconds, RealTimeSync, rsyncPath_ParametersPlus, SyncSource, SyncDest, RealTimeSyncLogsFile, RT_Option, RT_Option_HDW, errmsg, errnbr
 global Update_rsync, rsyncVersion, DownloadDestination, DownloadDestination1, rsync_Path, rsync, rsync_Path_bin, rsync_Path_macOS, DDrsyncVersion, isDone, itemPath, itemProgress, TerminalNotifier, pdf, SingleRsync, errmsg, errnbr
-global SingleRsync, ErosRealTimeRsync, SyncSource, SyncDest, ErosRealTimeRsyncLogsFile, APPitemPath, rsyncPath_ParametersPlus, rsyncPath_ParametersMinus, TerminalNotifier, isDone, itemPath, itemProgress, errmsg, errnbr
+global SingleSync, RealTimeSync, SyncSource, SyncDest, RealTimeSyncLogsFile, APPitemPath, rsyncPath_ParametersPlus, rsyncPath_ParametersMinus, TerminalNotifier, isDone, itemPath, itemProgress, errmsg, errnbr
 global VideoDownloadConversion, UpdateYouTubeDL, YouTubeVideoDownloads, InstallYouTubeDl, VideoConversion, createRamDisk, errmsg, errnbr
 global InstallYouTubeDl, YouTubeDl_Path, isDone, itemPath, itemProgress, TerminalNotifier, APPmacOSPath, YouTubeVideoDownloads, errmsg, errnbr
 global YouTubeVideoDownloads, VideoURL, APPitemPath, inBackground, YouTubeURL, DownloadDestination, TerminalNotifier, isDone, itemPath, itemProgress, errmsg, errnbr
@@ -95,15 +95,15 @@ on run
 				end if
 				
 				if rsyncOption is "macOS實鰣鮦步" then
-					set {button returned:ErosRsyncMode} to ¬
+					set {button returned:RealTimeSyncMode} to ¬
 						display dialog {"請鰛鰇鱮美鱺沝療癒鯀女鰰選擇 鮦步選項 唷💋"} buttons ¬
 							{"鱓次鮦步", "實鰣鮦步"} with title ¬
 							{"實鰣鮦步"}
 					
-					if ErosRsyncMode is "鱓次鮦步" then run script SingleRsync
+					if RealTimeSyncMode is "鱓次鮦步" then run script SingleSync
 					
-					if ErosRsyncMode is "實鰣鮦步" then
-						set {button returned:ErosRealTimeRsync} to ¬
+					if RealTimeSyncMode is "實鰣鮦步" then
+						set {button returned:RealTimeSync} to ¬
 							display dialog {"請鰛鰇鱮美鱺沝療癒鯀女鰰選擇欲鮦步之模式唷💋"} buttons ¬
 								{"雙向A<+>B鮦步", "鱓向A+>B鮦步", "鱓向A->B鮦步"} with title ¬
 								{"實鰣鮦步"}
@@ -114,7 +114,7 @@ on run
 						set SyncDest to ¬
 							(choose folder with prompt "請沝療癒鯀女鰰選擇 B:目標資料夾 唷💋" default location (path to (startup disk)))
 						
-						set ErosRealTimeRsyncLogsFile to ¬
+						set RealTimeSyncLogsFile to ¬
 							(((path to library folder from user domain) as text) & "logs:rsync.txt")
 						
 						set APPitemPath to POSIX path of (path to me as text) & ("Contents/MacOS/rsync")
@@ -128,8 +128,8 @@ on run
 						set TerminalNotifier to POSIX path of (path to me as text) & ("Contents/MacOS/terminal-notifier")
 						set TerminalNotifier to quoted form of TerminalNotifier
 						
-						if ErosRsyncMode is "鱓次鮦步" then
-							if ErosRealTimeRsync is "雙向A<+>B鮦步" then
+						if RealTimeSyncMode is "鱓次鮦步" then
+							if RealTimeSync is "雙向A<+>B鮦步" then
 								do shell script (TerminalNotifier & " -title 鮦步中唷💋")
 								(do shell script ¬
 									rsyncPath_ParametersPlus & ¬
@@ -159,7 +159,7 @@ on run
 									continue quit
 								end if
 							end if
-							if ErosRealTimeRsync is "鱓向A+>B鮦步" then
+							if RealTimeSync is "鱓向A+>B鮦步" then
 								do shell script (TerminalNotifier & " -title 鮦步中唷💋")
 								(do shell script ¬
 									rsyncPath_ParametersPlus & ¬
@@ -187,7 +187,7 @@ on run
 									continue quit
 								end if
 							end if
-							if ErosRealTimeRsync is "鱓向A->B鮦步" then
+							if RealTimeSync is "鱓向A->B鮦步" then
 								do shell script (TerminalNotifier & " -title 鮦步中唷💋")
 								(do shell script ¬
 									rsyncPath_ParametersMinus & ¬
@@ -219,7 +219,7 @@ on run
 					end if
 				end if
 			end if
-			if ErosRsyncMode is "實鰣鮦步" then
+			if RealTimeSyncMode is "實鰣鮦步" then
 				set firstRun to true
 				set RT_Seconds to ("")
 				set {button returned:RT_Option} to ¬
@@ -253,7 +253,7 @@ end run
 
 on idle
 	try
-		if ErosRsyncMode is "實鰣鮦步" then
+		if RealTimeSyncMode is "實鰣鮦步" then
 			if firstRun then
 				tell application "Finder" to display dialog {"請沝女鰰鰎魞間隔數字，倘鰙鰡空鱂以最小間隔值鮦步唷💋"} default answer ("") with title ¬
 					{"鱫鰰macOS實鰣鮦步"}
@@ -262,28 +262,28 @@ on idle
 				set firstRun to false
 			else
 				try
-					if ErosRealTimeRsync is "雙向A<+>B鮦步" then
+					if RealTimeSync is "雙向A<+>B鮦步" then
 						(do shell script ¬
 							rsyncPath_ParametersPlus & ¬
 							quoted form of POSIX path of SyncSource & " " & ¬
 							quoted form of POSIX path of SyncDest & " " & ¬
 							quoted form of POSIX path of SyncDest & " " & ¬
 							quoted form of POSIX path of SyncSource & " >> " & ¬
-							quoted form of POSIX path of ErosRealTimeRsyncLogsFile)
+							quoted form of POSIX path of RealTimeSyncLogsFile)
 					end if
-					if ErosRealTimeRsync is "鱓向A+>B鮦步" then
+					if RealTimeSync is "鱓向A+>B鮦步" then
 						(do shell script ¬
 							rsyncPath_ParametersPlus & ¬
 							quoted form of POSIX path of SyncSource & " " & ¬
 							quoted form of POSIX path of SyncDest & " >> " & ¬
-							quoted form of POSIX path of ErosRealTimeRsyncLogsFile)
+							quoted form of POSIX path of RealTimeSyncLogsFile)
 					end if
-					if ErosRealTimeRsync is "鱓向A->B鮦步" then
+					if RealTimeSync is "鱓向A->B鮦步" then
 						(do shell script ¬
 							rsyncPath_ParametersMinus & ¬
 							quoted form of POSIX path of SyncSource & " " & ¬
 							quoted form of POSIX path of SyncDest & " >> " & ¬
-							quoted form of POSIX path of ErosRealTimeRsyncLogsFile)
+							quoted form of POSIX path of RealTimeSyncLogsFile)
 					end if
 				end try
 			end if
@@ -371,10 +371,10 @@ rm -rf bin share " & DDrsyncVersion with administrator privileges)
 	end try
 end script
 -----------------∞ 鱓次鮦步 ∞-------------------------------ON. 
-script SingleRsync
+script SingleSync
 	try
 		tell application "Finder"
-			set {button returned:ErosRealTimeRsync} to ¬
+			set {button returned:RealTimeSync} to ¬
 				display dialog {" 
 請鰛鰇鱮美鱺沝療癒鯀女鰰選擇欲鮦步之模式唷💋"} buttons ¬
 					{"雙向A<+>B鮦步", "鱓向A+>B鮦步", "鱓向A->B鮦步"} with title ¬
@@ -385,7 +385,7 @@ script SingleRsync
 			set SyncDest to ¬
 				(choose folder with prompt " 
 請沝療癒鯀女鰰選擇 B:目標資料夾 唷💋" default location (path to (startup disk)))
-			set ErosRealTimeRsyncLogsFile to ¬
+			set RealTimeSyncLogsFile to ¬
 				(((path to library folder from user domain) as text) & "logs:rsync.txt")
 			
 			set APPitemPath to POSIX path of (path to me as text) & ("Contents/MacOS/rsync")
@@ -399,7 +399,7 @@ script SingleRsync
 			set TerminalNotifier to POSIX path of (path to me as text) & ("Contents/MacOS/terminal-notifier")
 			set TerminalNotifier to quoted form of TerminalNotifier
 			
-			if ErosRealTimeRsync is "雙向A<+>B鮦步" then
+			if RealTimeSync is "雙向A<+>B鮦步" then
 				do shell script (TerminalNotifier & " -title 鮦步中唷💋")
 				(do shell script ¬
 					rsyncPath_ParametersPlus & ¬
@@ -429,7 +429,7 @@ script SingleRsync
 					continue quit
 				end if
 			end if
-			if ErosRealTimeRsync is "鱓向A+>B鮦步" then
+			if RealTimeSync is "鱓向A+>B鮦步" then
 				do shell script (TerminalNotifier & " -title 鮦步中唷💋")
 				(do shell script ¬
 					rsyncPath_ParametersPlus & ¬
@@ -457,7 +457,7 @@ script SingleRsync
 					continue quit
 				end if
 			end if
-			if ErosRealTimeRsync is "鱓向A->B鮦步" then
+			if RealTimeSync is "鱓向A->B鮦步" then
 				do shell script (TerminalNotifier & " -title 鮦步中唷💋")
 				(do shell script ¬
 					rsyncPath_ParametersMinus & ¬
@@ -974,17 +974,19 @@ end script
 -------------------∞ 刪除APFS容器並將舊磁盤重新格式化為HFS ∞--------------------ON. 
 script deleteContainer
 	try
-		tell application "Finder" to display dialog (" 
-請嚫鱫的沝女鰰鰎魞欲變鯁之APFS的磁鰈號唷💋 
+		tell application "Finder"
+			display dialog (" 
+請嚫鱫的沝女鰰記住欲變鯁之APFS的磁鰈號唷💋 
 例: disk1s2 ")
-		tell application "Terminal"
-			if not (exists window 1) then reopen
-			activate
-			set size of window 1 to {550, 1200}
-			(do script ("diskutil list ") in window 1)
-			tell application "System Events" to key code 2 & 34 & 1 & 40 & 32 & 17 & 34 & 37 & 49 & 0 & 35 & 3 & 1 & 49 & 2 & 14 & 37 & 14 & 17 & 14 & 8 & 31 & 45 & 17 & 0 & 34 & 45 & 14 & 15 & 49 & 2 & 34 & 1 & 40
+			tell application "Terminal"
+				if not (exists window 1) then reopen
+				activate
+				set size of window 1 to {550, 1200}
+				(do script ("diskutil list ") in window 1)
+				tell application "System Events" to key code 2 & 34 & 1 & 40 & 32 & 17 & 34 & 37 & 49 & 0 & 35 & 3 & 1 & 49 & 2 & 14 & 37 & 14 & 17 & 14 & 8 & 31 & 45 & 17 & 0 & 34 & 45 & 14 & 15 & 49 & 2 & 34 & 1 & 40
+			end tell
+			continue quit
 		end tell
-		continue quit
 	on error errmsg number errnbr
 		if errnbr = -128 then continue quit
 		continue quit
@@ -993,17 +995,19 @@ end script
 --------------------------∞ 從其APFS容器中刪除APFS卷 ∞---------------------------ON. 
 script deleteVolume
 	try
-		tell application "Finder" to display dialog (" 
-請嚫鱫的沝女鰰鰎魞欲變鯁之APFS的磁鰈號唷💋 
+		tell application "Finder"
+			display dialog (" 
+請嚫鱫的沝女鰰記住欲變鯁之APFS的磁鰈號唷💋 
 例: disk1s2 ")
-		tell application "Terminal"
-			if not (exists window 1) then reopen
-			activate
-			set size of window 1 to {550, 1200}
-			(do script ("diskutil list ") in window 1)
-			tell application "System Events" to key code 2 & 34 & 1 & 40 & 32 & 17 & 34 & 37 & 49 & 0 & 35 & 3 & 1 & 49 & 2 & 14 & 37 & 14 & 17 & 14 & 9 & 31 & 37 & 32 & 46 & 14 & 49 & 2 & 34 & 1 & 40
+			tell application "Terminal"
+				if not (exists window 1) then reopen
+				activate
+				set size of window 1 to {550, 1200}
+				(do script ("diskutil list ") in window 1)
+				tell application "System Events" to key code 2 & 34 & 1 & 40 & 32 & 17 & 34 & 37 & 49 & 0 & 35 & 3 & 1 & 49 & 2 & 14 & 37 & 14 & 17 & 14 & 9 & 31 & 37 & 32 & 46 & 14 & 49 & 2 & 34 & 1 & 40
+			end tell
+			continue quit
 		end tell
-		continue quit
 	on error errmsg number errnbr
 		if errnbr = -128 then continue quit
 		continue quit
