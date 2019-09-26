@@ -88,10 +88,15 @@ on run
 				if rsyncOption is "重新鮟裝rsync" then run script Update_rsync
 				
 				if rsyncOption is "iCloudDrive使用者鮦步" then
-					set iCloudSyncPath to POSIX path of (path to me as text) & ("Contents/Resources/Scripts/鱫鰰iCloudDrive使用者鮦步.app")
-					set iCloudSyncPath to quoted form of iCloudSyncPath
-					do shell script ("open -n " & iCloudSyncPath)
-					continue quit
+					try
+						set iCloudSyncPath to POSIX path of (path to me as text) & ("Contents/Resources/Scripts/鱫鰰iCloudDrive使用者鮦步.app")
+						set iCloudSyncPath to quoted form of iCloudSyncPath
+						do shell script ("open -n " & iCloudSyncPath)
+						continue quit
+					on error errmsg number errnbr
+						if errnbr = -128 then continue quit
+						continue quit
+					end try
 				end if
 				
 				if rsyncOption is "macOS實鰣鮦步" then
