@@ -16,7 +16,7 @@ bit.ly/下載_Install_macOS_Sierra_iso
 
 AppleScript 
 下載: bit.ly/鱫鰰鏡之鰣空 ¬ 
-{"macOS實鰣鮦步 & iCloudDrive使用者鮦步 & 重新鮟裝rsync", "YouTube下載 & 影音轉換MP3 & RamDisk", "macOS開機鰈鱮ISO鯯作 & APFS助手 & 開啟鱫鰰鏡之鰣空腳本"}  
+{"macOS實鰣鮦步 & iCloudDrive使用者鮦步 & 重新鮟裝rsync", "YouTube下載 & 影音轉換MP3 & RamDisk", "macOS開機鰈鱮ISO鯯作 & APFS助手 & macOS下載助手 & 開啟鱫鰰鏡之鰣空腳本"}  
 
 倘鰙沝女鰰對macOS實鰣鮦步有多開需鯄魺下載使用唷💋 
 倘鰙沝女鰰首次鰎䲞RamDisk鱞請沝女鰰關閉瀏灠器鱮所有程式再執行唷💋 
@@ -39,44 +39,63 @@ https://www.youtube.com/channel/UCdQlnh4GCQSGXmTPQg5MKGQ/videos
 JuliaComputing.com    Julialang.org    鮢鯏𩸋 (𩸍魿行版)   
 *)
 ---------------------------------∞ 鱫鰰鏡之鰣空 ∞----------------------------------------ON. 
-global ErosTSMirror, VideoDownloadConversion, ISO_APFS_OpenScript_Option, macOSBoot, APFShelper, OpenScript, rsyncOption, Update_rsync, iCloudSyncPath, rsyncOption, RealTimeSyncMode, SingleSync, RealTimeSync, SyncSource, SyncDest, RealTimeSyncLogsFile, APPitemPath, rsyncPath_ParametersPlus, rsyncPath_ParametersMinus, TerminalNotifier, isDone, itemPath, itemProgress, firstRun, RT_Seconds, RT_Option, RT_Option_HDW, errmsg, errnbr
-global RealTimeSyncMode, firstRun, RT_Seconds, RealTimeSync, rsyncPath_ParametersPlus, SyncSource, SyncDest, RealTimeSyncLogsFile, RT_Option, RT_Option_HDW, errmsg, errnbr
+global ErosTSMirror, VideoDownloadConversion, ISO_APFS_macOSDownload_OpenScript_Option, macOSBoot, ISO_APFS_macOSDownload_OpenScript_ASK, APFShelper, macOSDownload, OpenScript, rsyncOption, Update_rsync, iCloudSyncPath, RealTimeSyncMode, SingleSync, RealTimeSync, SyncSource, SyncDest, RealTimeSyncLogsFile, APPitemPath, rsyncPath_ParametersPlus, rsyncPath_ParametersMinus, TerminalNotifier, isDone, itemPath, itemProgress, firstRun, RT_Seconds, RT_Option, RT_Option_HDW, errmsg, errnbr
+global RealTimeSyncMode, firstRun, RT_Seconds, RealTimeSync, rsyncPath_ParametersPlus, rsyncPath_ParametersMinus, SyncSource, SyncDest, RealTimeSyncLogsFile, RT_Option, RT_Option_HDW, errmsg, errnbr
+
 global Update_rsync, rsyncVersion, DownloadDestination, DownloadDestination1, rsync_Path, rsync, rsync_Path_bin, rsync_Path_macOS, DDrsyncVersion, isDone, itemPath, itemProgress, TerminalNotifier, pdf, SingleRsync, errmsg, errnbr
+
 global SingleSync, RealTimeSync, SyncSource, SyncDest, RealTimeSyncLogsFile, APPitemPath, rsyncPath_ParametersPlus, rsyncPath_ParametersMinus, TerminalNotifier, isDone, itemPath, itemProgress, errmsg, errnbr
+
 global VideoDownloadConversion, UpdateYouTubeDL, YouTubeVideoDownloads, InstallYouTubeDl, VideoConversion, createRamDisk, errmsg, errnbr
 global InstallYouTubeDl, YouTubeDl_Path, isDone, itemPath, itemProgress, TerminalNotifier, APPmacOSPath, YouTubeVideoDownloads, errmsg, errnbr
 global YouTubeVideoDownloads, VideoURL, APPitemPath, inBackground, YouTubeURL, DownloadDestination, TerminalNotifier, isDone, itemPath, itemProgress, errmsg, errnbr
 global VideoConversion, ConversionOption, SinglePiece, BatchConversion, errmsg, errnbr
 global SinglePiece, Input, BitConversion, APPitemPath, InputPath, mk, Output, ConversionParameter, FFmpegConversion, inBackground, FFmpeg, TerminalNotifier, isDone, itemPath, itemProgress, MP3, errmsg, errnbr, remove_path, this_name, oldDelims, remove_extension
 global BatchConversion, Input, media, BitConversion, APPitemPath, Input1, Input2, mk, i, fileName, Output, ConversionParameter, FFmpegConversion, inBackground, FFmpeg, TerminalNotifier, isDone, itemPath, itemProgress, MP3, errmsg, errnbr, remove_extension, this_name, x
+
 global createRamDisk, RamDiskSize, RamDiskName, RamDiskImg, RamDisk, RamDiskShellCmd, isDone, itemPath, itemProgress, TerminalNotifier, errmsg, errnbr
+
 global macOSBoot, macOSBootISO, macOSBootUSB_BackgroundProcessing, errmsg, errnbr
 global macOSBootUSB_BackgroundProcessing, InstallmacOS, ErosDestUSB, CreateInstallMedia, NewVersion, OldVersion, inBackground, BackgroundProcessing, isDone, itemPath, itemProgress, TerminalNotifier, errmsg, errnbr
 global macOSBootISO, InstallmacOS, ISOsize, VolumesEros, InstallmacOSpath, CreateInstallMedia, InstallmacOSname, InstallmacOSnameExtension, inBackground, isDone, itemPath, itemProgress, TerminalNotifier, errmsg, errnbr
+
 global APFShelper, APFS_Option, deleteContainer, deleteVolume, OpenScript, errmsg, errnbr
 global deleteContainer, errmsg, errnbr
 global deleteVolume, errmsg, errnbr
-global OpenScript, OpenAppScript, TerminalNotifier, errmsg, errnbr
 
+global macOSDownload, SelectDownloadVersion, SelectVersion, Catalina, Mojave, HighSierra_Sierra_ElCapitan, HighSierra, Sierra, El_Capitan, errmsg, errnbr
+global El_Capitan, El_Capitan_URL, errmsg, errnbr
+global Sierra, Sierra_URL, errmsg, errnbr
+global HighSierra, HighSierra_URL, errmsg, errnbr
+global Mojave, Mojave_URL, errmsg, errnbr
+global Catalina, Catalina_URL, errmsg, errnbr
+
+global OpenScript, OpenAppScript, TerminalNotifier, errmsg, errnbr
 
 on run
 	try
 		tell application "Finder"
 			set {button returned:ErosTSMirror} to ¬
 				display dialog ("請嚫鱫的沝女鰰選擇 鱫鰰裸軟 選項唷💋") buttons ¬
-					{"macOS實鰣鮦步 & iCloudDrive使用者鮦步 & 重新鮟裝rsync", "YouTube下載 & 影音轉換MP3 & RamDisk", "macOS開機鰈鱮ISO鯯作 & APFS助手 & 開啟鱫鰰鏡之鰣空腳本"} with title ¬
+					{"macOS實鰣鮦步 & iCloudDrive使用者鮦步 & 重新鮟裝rsync", "YouTube下載 & 影音轉換MP3 & RamDisk", "macOS開機鰈鱮ISO鯯作 & APFS助手 & macOS下載助手 & 開啟鱫鰰鏡之鰣空腳本"} with title ¬
 					{"鱫鰰鏡之鰣空"}
 			
 			if ErosTSMirror is "YouTube下載 & 影音轉換MP3 & RamDisk" then run script VideoDownloadConversion
 			
-			if ErosTSMirror is "macOS開機鰈鱮ISO鯯作 & APFS助手 & 開啟鱫鰰鏡之鰣空腳本" then
-				set {button returned:ISO_APFS_OpenScript_Option} to ¬
+			if ErosTSMirror is "macOS開機鰈鱮ISO鯯作 & APFS助手 & macOS下載助手 & 開啟鱫鰰鏡之鰣空腳本" then
+				set {button returned:ISO_APFS_macOSDownload_OpenScript_Option} to ¬
 					display dialog ("請嚫鱫的沝女鰰選擇 鱫鰰裸軟 選項唷💋") buttons ¬
-						{"macOS開機鰈鱮ISO鯯作", "APFS助手", "開啟鱫鰰鏡之鰣空腳本"} with title ¬
+						{"macOS開機鰈鱮ISO鯯作", "APFS助手 & macOS下載助手", "開啟鱫鰰鏡之鰣空腳本"} with title ¬
 						{"鱫鰰鏡之鰣空"}
-				if ISO_APFS_OpenScript_Option is "macOS開機鰈鱮ISO鯯作" then run script macOSBoot
-				if ISO_APFS_OpenScript_Option is "APFS助手" then run script APFShelper
-				if ISO_APFS_OpenScript_Option is "開啟鱫鰰鏡之鰣空腳本" then run script OpenScript
+				if ISO_APFS_macOSDownload_OpenScript_Option is "macOS開機鰈鱮ISO鯯作" then run script macOSBoot
+				if ISO_APFS_macOSDownload_OpenScript_Option is "APFS助手 & macOS下載助手" then
+					set {button returned:ISO_APFS_macOSDownload_OpenScript_ASK} to ¬
+						display dialog ("請嚫鱫的沝女鰰選擇 鱫鰰裸軟 選項唷💋") buttons ¬
+							{"APFS助手", "macOS下載助手"}
+					if ISO_APFS_macOSDownload_OpenScript_ASK is "APFS助手" then run script APFShelper
+					if ISO_APFS_macOSDownload_OpenScript_ASK is "macOS下載助手" then run script macOSDownload
+				end if
+				if ISO_APFS_macOSDownload_OpenScript_Option is "開啟鱫鰰鏡之鰣空腳本" then run script OpenScript
 			end if
 			
 			if ErosTSMirror is "macOS實鰣鮦步 & iCloudDrive使用者鮦步 & 重新鮟裝rsync" then
@@ -1008,6 +1027,92 @@ script deleteVolume
 			end tell
 			continue quit
 		end tell
+	on error errmsg number errnbr
+		if errnbr = -128 then continue quit
+		continue quit
+	end try
+end script
+---------------------------∞ 鱫鰰macOS下載助手 ∞----------------------------ON. 
+script macOSDownload
+	try
+		tell application "Finder"
+			set {button returned:SelectDownloadVersion} to ¬
+				display dialog ("請嚫鱫的沝女鰰選擇欲下載之macOS版本唷💋") buttons ¬
+					{"Catalina & Mojave", "HighSierra & Sierra & El Capitan"} with title ¬
+					{"鱫鰰macOS下載助手"}
+			if SelectDownloadVersion is "Catalina & Mojave" then
+				set {button returned:SelectVersion} to ¬
+					display dialog ("請嚫鱫的沝女鰰選擇欲下載之macOS版本唷💋") buttons ¬
+						{"Catalina", "Mojave"} with title ¬
+						{"鱫鰰macOS下載助手"}
+				if SelectVersion is "Catalina" then run script Catalina
+				if SelectVersion is "Mojave" then run script Mojave
+			end if
+			if SelectDownloadVersion is "HighSierra & Sierra & El Capitan" then
+				set {button returned:HighSierra_Sierra_ElCapitan} to ¬
+					display dialog ("請嚫鱫的沝女鰰選擇欲下載之macOS版本唷💋") buttons ¬
+						{"HighSierra", "Sierra", "El Capitan"} with title ¬
+						{"鱫鰰macOS下載助手"}
+				if HighSierra_Sierra_ElCapitan is "HighSierra" then run script HighSierra
+				if HighSierra_Sierra_ElCapitan is "Sierra" then run script Sierra
+				if HighSierra_Sierra_ElCapitan is "El Capitan" then run script El_Capitan
+			end if
+		end tell
+	on error errmsg number errnbr
+		if errnbr = -128 then continue quit
+		continue quit
+	end try
+end script
+------------------------ 下載 Catalina ------------------------ON. 
+script Catalina
+	try
+		set Catalina_URL to ("https://www.apple.com/macos/catalina/")
+		tell application "Google Chrome" to activate (open location Catalina_URL)
+		continue quit
+	on error errmsg number errnbr
+		if errnbr = -128 then continue quit
+		continue quit
+	end try
+end script
+------------------------ 下載 Mojave ------------------------ON. 
+script Mojave
+	try
+		set Mojave_URL to ("https://apps.apple.com/tw/app/macos-mojave/id1398502828?ls=1&mt=12")
+		tell application "Google Chrome" to activate (open location Mojave_URL)
+		continue quit
+	on error errmsg number errnbr
+		if errnbr = -128 then continue quit
+		continue quit
+	end try
+end script
+------------------------ 下載 High Sierra ------------------------ON. 
+script HighSierra
+	try
+		set HighSierra_URL to ("https://apps.apple.com/tw/app/macos-high-sierra/id1246284741?ls=1&mt=12")
+		tell application "Google Chrome" to activate (open location HighSierra_URL)
+		continue quit
+	on error errmsg number errnbr
+		if errnbr = -128 then continue quit
+		continue quit
+	end try
+end script
+------------------------ 下載 Sierra ------------------------ON. 
+script Sierra
+	try
+		set Sierra_URL to ("https://apps.apple.com/tw/app/macos-sierra/id1127487414?ls=1&mt=12")
+		tell application "Google Chrome" to activate (open location Sierra_URL)
+		continue quit
+	on error errmsg number errnbr
+		if errnbr = -128 then continue quit
+		continue quit
+	end try
+end script
+------------------------ 下載 El_Capitan ------------------------ON. 
+script El_Capitan
+	try
+		set El_Capitan_URL to ("https://apps.apple.com/app/os-x-el-capitan/id1147835434?ls=1&mt=12")
+		tell application "Google Chrome" to activate (open location El_Capitan_URL)
+		continue quit
 	on error errmsg number errnbr
 		if errnbr = -128 then continue quit
 		continue quit
