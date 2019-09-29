@@ -1,6 +1,4 @@
 (* 
-鱫鰰裸軟 - 鱫鰰鏡之鰣空 
-
 Apple.com/Mac-Pro 
 Apple.com/Pro-Display-XDR 
 
@@ -8,15 +6,15 @@ Apple.com/Pro-Display-XDR
 
 macOS Catalina 
 
-bit.ly/下載_Install_macOS_High_Sierra_iso 
-bit.ly/下載_Install_macOS_Sierra_iso 
+bit.ly/下載_Install_macOS_High_Sierra_iso      <-- APFS 
+bit.ly/下載_Install_macOS_Sierra_iso              <-- HFS+ 
 
 無簽章之(簡易裸程式)吥鰎議鯲 macOS Mojave 鯀統使用唷🤣 
 鰎議鯲   macOS High Sierra     macOS Sierra     macOS El Capitan   鯀統使用唷💋 
 
 AppleScript 
 下載: bit.ly/鱫鰰鏡之鰣空 ¬ 
-{"macOS實鰣鮦步 & iCloudDrive使用者鮦步 & 重新鮟裝rsync", "YouTube下載 & 影音轉換MP3 & RamDisk", "macOS開機鰈鱮ISO鯯作 & APFS助手 & macOS下載助手 & 開啟鱫鰰鏡之鰣空腳本"}  
+{"macOS實鰣鮦步 & iCloudDrive使用者鮦步", "YouTube下載 & 影音轉換MP3 & RamDisk", "macOS開機鰈鱮ISO鯯作 & APFS助手 & macOS下載助手 & 開啟鱫鰰鏡之鰣空腳本"} 
 
 倘鰙沝女鰰對macOS實鰣鮦步有多開需鯄魺下載使用唷💋 
 倘鰙沝女鰰首次鰎䲞RamDisk鱞請沝女鰰關閉瀏灠器鱮所有程式再執行唷💋 
@@ -39,37 +37,15 @@ https://www.youtube.com/channel/UCdQlnh4GCQSGXmTPQg5MKGQ/videos
 JuliaComputing.com    Julialang.org    鮢鯏𩸋 (𩸍魿行版)   
 *)
 ---------------------------------∞ 鱫鰰鏡之鰣空 ∞----------------------------------------ON. 
-global ErosTSMirror, VideoDownloadConversion, ISO_APFS_macOSDownload_OpenScript_Option, macOSBoot, ISO_APFS_macOSDownload_OpenScript_ASK, APFShelper, macOSDownload, OpenScript, rsyncOption, Update_rsync, iCloudSyncPath, RealTimeSyncMode, SingleSync, RealTimeSync, SyncSource, SyncDest, RealTimeSyncLogsFile, APPitemPath, rsyncPath_ParametersPlus, rsyncPath_ParametersMinus, TerminalNotifier, isDone, itemPath, itemProgress, firstRun, RT_Seconds, RT_Option, RT_Option_HDW, errmsg, errnbr
-global RealTimeSyncMode, firstRun, RT_Seconds, RealTimeSync, rsyncPath_ParametersPlus, rsyncPath_ParametersMinus, SyncSource, SyncDest, RealTimeSyncLogsFile, RT_Option, RT_Option_HDW, errmsg, errnbr
+global ErosTSMirror, YouTube_download_Conversion, YouTubeDownloader_MP4toMp3, createRamDisk, ISO_APFS_OpenScript_Option, macOSinstall_USB_ISO, APFS_macOSDownload_Option, APFShelper, macOS_Download_Helper, OpenScript, rsyncOption, ErosRTsync, iCloudDriveSync, errmsg, errnbr
 
-global Update_rsync, rsyncVersion, DownloadDestination, DownloadDestination1, rsync_Path, rsync, rsync_Path_bin, rsync_Path_macOS, DDrsyncVersion, isDone, itemPath, itemProgress, TerminalNotifier, pdf, SingleRsync, errmsg, errnbr
-
-global SingleSync, RealTimeSync, SyncSource, SyncDest, RealTimeSyncLogsFile, APPitemPath, rsyncPath_ParametersPlus, rsyncPath_ParametersMinus, TerminalNotifier, isDone, itemPath, itemProgress, errmsg, errnbr
-
-global VideoDownloadConversion, UpdateYouTubeDL, YouTubeVideoDownloads, InstallYouTubeDl, VideoConversion, createRamDisk, errmsg, errnbr
-global InstallYouTubeDl, YouTubeDl_Path, isDone, itemPath, itemProgress, TerminalNotifier, APPmacOSPath, YouTubeVideoDownloads, errmsg, errnbr
-global YouTubeVideoDownloads, VideoURL, APPitemPath, inBackground, YouTubeURL, DownloadDestination, TerminalNotifier, isDone, itemPath, itemProgress, errmsg, errnbr
-global VideoConversion, ConversionOption, SinglePiece, BatchConversion, errmsg, errnbr
-global SinglePiece, Input, BitConversion, APPitemPath, InputPath, mk, Output, ConversionParameter, FFmpegConversion, inBackground, FFmpeg, TerminalNotifier, isDone, itemPath, itemProgress, MP3, errmsg, errnbr, remove_path, this_name, oldDelims, remove_extension
-global BatchConversion, Input, media, BitConversion, APPitemPath, Input1, Input2, mk, i, fileName, Output, ConversionParameter, FFmpegConversion, inBackground, FFmpeg, TerminalNotifier, isDone, itemPath, itemProgress, MP3, errmsg, errnbr, remove_extension, this_name, x
-
-global createRamDisk, RamDiskSize, RamDiskName, RamDiskImg, RamDisk, RamDiskShellCmd, isDone, itemPath, itemProgress, TerminalNotifier, errmsg, errnbr
-
-global macOSBoot, macOSBootISO, macOSBootUSB_BackgroundProcessing, errmsg, errnbr
-global macOSBootUSB_BackgroundProcessing, InstallmacOS, ErosDestUSB, CreateInstallMedia, NewVersion, OldVersion, inBackground, BackgroundProcessing, isDone, itemPath, itemProgress, TerminalNotifier, errmsg, errnbr
-global macOSBootISO, InstallmacOS, ISOsize, VolumesEros, InstallmacOSpath, CreateInstallMedia, InstallmacOSname, InstallmacOSnameExtension, inBackground, isDone, itemPath, itemProgress, TerminalNotifier, errmsg, errnbr
-
-global APFShelper, APFS_Option, deleteContainer, deleteVolume, OpenScript, errmsg, errnbr
-global deleteContainer, errmsg, errnbr
-global deleteVolume, errmsg, errnbr
-
-global macOSDownload, SelectDownloadVersion, SelectVersion, Catalina, Mojave, HighSierra_Sierra_ElCapitan, HighSierra, Sierra, El_Capitan, errmsg, errnbr
-global El_Capitan, El_Capitan_URL, errmsg, errnbr
-global Sierra, Sierra_URL, errmsg, errnbr
-global HighSierra, HighSierra_URL, errmsg, errnbr
-global Mojave, Mojave_URL, errmsg, errnbr
-global Catalina, Catalina_URL, errmsg, errnbr
-
+global APFShelper, APPname, APPpath, errmsg, errnbr
+global iCloudDriveSync, APPname, APPpath, errmsg, errnbr
+global createRamDisk, APPname, APPpath, errmsg, errnbr
+global macOS_Download_Helper, APPname, APPpath, errmsg, errnbr
+global macOSinstall_USB_ISO, APPname, APPpath, errmsg, errnbr
+global ErosRTsync, APPname, APPpath, errmsg, errnbr
+global YouTubeDownloader_MP4toMp3, APPname, APPpath, errmsg, errnbr
 global OpenScript, OpenAppScript, TerminalNotifier, errmsg, errnbr
 
 on run
@@ -77,191 +53,39 @@ on run
 		tell application "Finder"
 			set {button returned:ErosTSMirror} to ¬
 				display dialog ("請嚫鱫的沝女鰰選擇 鱫鰰裸軟 選項唷💋") buttons ¬
-					{"macOS實鰣鮦步 & iCloudDrive使用者鮦步 & 重新鮟裝rsync", "YouTube下載 & 影音轉換MP3 & RamDisk", "macOS開機鰈鱮ISO鯯作 & APFS助手 & macOS下載助手 & 開啟鱫鰰鏡之鰣空腳本"} with title ¬
+					{"macOS實鰣鮦步 & iCloudDrive使用者鮦步", "YouTube下載 & 影音轉換MP3 & RamDisk", "macOS開機鰈鱮ISO鯯作 & APFS助手 & macOS下載助手 & 開啟鱫鰰鏡之鰣空腳本"} with title ¬
 					{"鱫鰰鏡之鰣空"}
-			
-			if ErosTSMirror is "YouTube下載 & 影音轉換MP3 & RamDisk" then run script VideoDownloadConversion
-			
+			if ErosTSMirror is "YouTube下載 & 影音轉換MP3 & RamDisk" then
+				set {button returned:YouTube_download_Conversion} to ¬
+					display dialog ("請嚫鱫的沝女鰰選擇 鱫鰰裸軟 選項唷💋") buttons ¬
+						{"YouTube下載 & 影音轉換MP3", "RamDisk"} with title ¬
+						{"鱫鰰鏡之鰣空"}
+				if YouTube_download_Conversion is "YouTube下載 & 影音轉換MP3" then run script YouTubeDownloader_MP4toMp3
+				if YouTube_download_Conversion is "RamDisk" then run script createRamDisk
+			end if
 			if ErosTSMirror is "macOS開機鰈鱮ISO鯯作 & APFS助手 & macOS下載助手 & 開啟鱫鰰鏡之鰣空腳本" then
-				set {button returned:ISO_APFS_macOSDownload_OpenScript_Option} to ¬
+				set {button returned:ISO_APFS_OpenScript_Option} to ¬
 					display dialog ("請嚫鱫的沝女鰰選擇 鱫鰰裸軟 選項唷💋") buttons ¬
 						{"macOS開機鰈鱮ISO鯯作", "APFS助手 & macOS下載助手", "開啟鱫鰰鏡之鰣空腳本"} with title ¬
 						{"鱫鰰鏡之鰣空"}
-				if ISO_APFS_macOSDownload_OpenScript_Option is "macOS開機鰈鱮ISO鯯作" then run script macOSBoot
-				if ISO_APFS_macOSDownload_OpenScript_Option is "APFS助手 & macOS下載助手" then
-					set {button returned:ISO_APFS_macOSDownload_OpenScript_ASK} to ¬
+				if ISO_APFS_OpenScript_Option is "macOS開機鰈鱮ISO鯯作" then run script macOSinstall_USB_ISO
+				if ISO_APFS_OpenScript_Option is "APFS助手 & macOS下載助手" then
+					set {button returned:APFS_macOSDownload_Option} to ¬
 						display dialog ("請嚫鱫的沝女鰰選擇 鱫鰰裸軟 選項唷💋") buttons ¬
-							{"APFS助手", "macOS下載助手"}
-					if ISO_APFS_macOSDownload_OpenScript_ASK is "APFS助手" then run script APFShelper
-					if ISO_APFS_macOSDownload_OpenScript_ASK is "macOS下載助手" then run script macOSDownload
+							{"APFS助手", "macOS下載助手"} with title ¬
+							{"鱫鰰鏡之鰣空"}
+					if APFS_macOSDownload_Option is "APFS助手" then run script APFShelper
+					if APFS_macOSDownload_Option is "macOS下載助手" then run script macOS_Download_Helper
 				end if
-				if ISO_APFS_macOSDownload_OpenScript_Option is "開啟鱫鰰鏡之鰣空腳本" then run script OpenScript
+				if ISO_APFS_OpenScript_Option is "開啟鱫鰰鏡之鰣空腳本" then run script OpenScript
 			end if
-			
-			if ErosTSMirror is "macOS實鰣鮦步 & iCloudDrive使用者鮦步 & 重新鮟裝rsync" then
+			if ErosTSMirror is "macOS實鰣鮦步 & iCloudDrive使用者鮦步" then
 				set {button returned:rsyncOption} to ¬
-					display dialog ("請嚫鱫的沝女鰰選擇 鱫鰰macOS實鰣鮦步 選項唷💋") buttons ¬
-						{"macOS實鰣鮦步", "iCloudDrive使用者鮦步", "重新鮟裝rsync"} with title ¬
+					display dialog ("請嚫鱫的沝女鰰選擇 macOS實鰣鮦步 選項唷💋") buttons ¬
+						{"macOS實鰣鮦步", "iCloudDrive使用者鮦步"} with title ¬
 						{"鱫鰰鏡之鰣空"}
-				
-				if rsyncOption is "重新鮟裝rsync" then run script Update_rsync
-				
-				if rsyncOption is "iCloudDrive使用者鮦步" then
-					set iCloudSyncPath to POSIX path of (path to me as text) & ("Contents/Resources/Scripts/鱫鰰iCloudDrive使用者鮦步.app")
-					set iCloudSyncPath to quoted form of iCloudSyncPath
-					do shell script ("open -n " & iCloudSyncPath)
-					continue quit
-				end if
-				
-				if rsyncOption is "macOS實鰣鮦步" then
-					set {button returned:RealTimeSyncMode} to ¬
-						display dialog {"請鰛鰇鱮美鱺沝療癒鯀女鰰選擇 鮦步選項 唷💋"} buttons ¬
-							{"鱓次鮦步", "實鰣鮦步"} with title ¬
-							{"實鰣鮦步"}
-					
-					if RealTimeSyncMode is "鱓次鮦步" then run script SingleSync
-					
-					if RealTimeSyncMode is "實鰣鮦步" then
-						set {button returned:RealTimeSync} to ¬
-							display dialog {"請鰛鰇鱮美鱺沝療癒鯀女鰰選擇欲鮦步之模式唷💋"} buttons ¬
-								{"雙向A<+>B鮦步", "鱓向A+>B鮦步", "鱓向A->B鮦步"} with title ¬
-								{"實鰣鮦步"}
-						
-						set SyncSource to ¬
-							(choose folder with prompt "請沝療癒鯀女鰰選擇 A:來源資料夾 唷💋" default location (path to (users folder)))
-						
-						set SyncDest to ¬
-							(choose folder with prompt "請沝療癒鯀女鰰選擇 B:目標資料夾 唷💋" default location (path to (startup disk)))
-						
-						set RealTimeSyncLogsFile to ¬
-							(((path to library folder from user domain) as text) & "logs:rsync.txt")
-						
-						set APPitemPath to POSIX path of (path to me as text) & ("Contents/MacOS/rsync")
-						set APPitemPath to quoted form of APPitemPath
-						
-						set rsyncPath_ParametersPlus to ¬
-							(APPitemPath & " -ESWPaudvxh80AX --stats --exclude={.*,} ")
-						set rsyncPath_ParametersMinus to ¬
-							(APPitemPath & " -ESWPaudvxh80AX --delete --stats --exclude={.*,} ")
-						
-						set TerminalNotifier to POSIX path of (path to me as text) & ("Contents/MacOS/terminal-notifier")
-						set TerminalNotifier to quoted form of TerminalNotifier
-						
-						if RealTimeSyncMode is "鱓次鮦步" then
-							if RealTimeSync is "雙向A<+>B鮦步" then
-								do shell script (TerminalNotifier & " -title 鮦步中唷💋")
-								(do shell script ¬
-									rsyncPath_ParametersPlus & ¬
-									quoted form of POSIX path of SyncSource & " " & ¬
-									quoted form of POSIX path of SyncDest & " " & ¬
-									quoted form of POSIX path of SyncDest & " " & ¬
-									quoted form of POSIX path of SyncSource)
-								delay 1
-								set isDone to false
-								set itemPath to ("rsync ")
-								set itemProgress to "ps ax | grep -v grep | grep " & itemPath
-								repeat while isDone is false
-									try
-										do shell script itemProgress
-										if the result contains itemPath then
-											delay 1
-										else
-											set isDone to true
-										end if
-									on error
-										set isDone to true
-									end try
-								end repeat
-								if isDone is true then
-									do shell script (TerminalNotifier & " -title 鮦步鯇成鰳唷💋")
-									do shell script ("open " & quoted form of POSIX path of SyncDest)
-									continue quit
-								end if
-							end if
-							if RealTimeSync is "鱓向A+>B鮦步" then
-								do shell script (TerminalNotifier & " -title 鮦步中唷💋")
-								(do shell script ¬
-									rsyncPath_ParametersPlus & ¬
-									quoted form of POSIX path of SyncSource & " " & ¬
-									quoted form of POSIX path of SyncDest)
-								delay 1
-								set isDone to false
-								set itemPath to ("rsync ")
-								set itemProgress to "ps ax | grep -v grep | grep " & itemPath
-								repeat while isDone is false
-									try
-										do shell script itemProgress
-										if the result contains itemPath then
-											delay 1
-										else
-											set isDone to true
-										end if
-									on error
-										set isDone to true
-									end try
-								end repeat
-								if isDone is true then
-									do shell script (TerminalNotifier & " -title 鮦步鯇成鰳唷💋")
-									do shell script ("open " & quoted form of POSIX path of SyncDest)
-									continue quit
-								end if
-							end if
-							if RealTimeSync is "鱓向A->B鮦步" then
-								do shell script (TerminalNotifier & " -title 鮦步中唷💋")
-								(do shell script ¬
-									rsyncPath_ParametersMinus & ¬
-									quoted form of POSIX path of SyncSource & " " & ¬
-									quoted form of POSIX path of SyncDest)
-								delay 1
-								set isDone to false
-								set itemPath to ("rsync ")
-								set itemProgress to "ps ax | grep -v grep | grep " & itemPath
-								repeat while isDone is false
-									try
-										do shell script itemProgress
-										if the result contains itemPath then
-											delay 1
-										else
-											set isDone to true
-										end if
-									on error
-										set isDone to true
-									end try
-								end repeat
-								if isDone is true then
-									do shell script (TerminalNotifier & " -title 鮦步鯇成鰳唷💋")
-									do shell script ("open " & quoted form of POSIX path of SyncDest)
-									continue quit
-								end if
-							end if
-						end if
-					end if
-				end if
-			end if
-			if RealTimeSyncMode is "實鰣鮦步" then
-				set firstRun to true
-				set RT_Seconds to ("")
-				set {button returned:RT_Option} to ¬
-					display dialog {" 
-請鰛鰇鱮美鱺沝療癒鯀女鰰選擇 鮦步間隔鱓位 唷💋"} buttons ¬
-						{"秒", "魵", "鰣 日 週"} with title ¬
-						{"鱫鰰macOS實鰣鮦步"}
-				
-				if RT_Option is "秒" then return RT_Seconds
-				if RT_Option is "魵" then return {RT_Seconds * minutes}
-				
-				if RT_Option is "鰣 日 週" then
-					set {button returned:RT_Option_HDW} to ¬
-						display dialog {" 
-請鰛鰇鱮美鱺沝療癒鯀女鰰選擇 鮦步間隔鱓位 唷💋"} buttons ¬
-							{"鰣", "日", "週"} with title ¬
-							{"鱫鰰macOS實鰣鮦步"}
-					
-					if RT_Option_HDW is "鰣" then return {RT_Seconds * hours}
-					if RT_Option_HDW is "日" then return {RT_Seconds * days}
-					if RT_Option_HDW is "週" then return {RT_Seconds * weeks}
-					
-				end if
+				if rsyncOption is "macOS實鰣鮦步" then run script ErosRTsync
+				if rsyncOption is "iCloudDrive使用者鮦步" then run script iCloudDriveSync
 			end if
 		end tell
 	on error errmsg number errnbr
@@ -270,848 +94,97 @@ on run
 	end try
 end run
 
-on idle
-	try
-		if RealTimeSyncMode is "實鰣鮦步" then
-			if firstRun then
-				tell application "Finder" to display dialog {"請沝女鰰鰎魞間隔數字，倘鰙鰡空鱂以最小間隔值鮦步唷💋"} default answer ("") with title ¬
-					{"鱫鰰macOS實鰣鮦步"}
-				set RT_Seconds to ((text returned of the result) as integer)
-				if RT_Seconds is "" then return continue quit
-				set firstRun to false
-			else
-				try
-					if RealTimeSync is "雙向A<+>B鮦步" then
-						(do shell script ¬
-							rsyncPath_ParametersPlus & ¬
-							quoted form of POSIX path of SyncSource & " " & ¬
-							quoted form of POSIX path of SyncDest & " " & ¬
-							quoted form of POSIX path of SyncDest & " " & ¬
-							quoted form of POSIX path of SyncSource & " >> " & ¬
-							quoted form of POSIX path of RealTimeSyncLogsFile)
-					end if
-					if RealTimeSync is "鱓向A+>B鮦步" then
-						(do shell script ¬
-							rsyncPath_ParametersPlus & ¬
-							quoted form of POSIX path of SyncSource & " " & ¬
-							quoted form of POSIX path of SyncDest & " >> " & ¬
-							quoted form of POSIX path of RealTimeSyncLogsFile)
-					end if
-					if RealTimeSync is "鱓向A->B鮦步" then
-						(do shell script ¬
-							rsyncPath_ParametersMinus & ¬
-							quoted form of POSIX path of SyncSource & " " & ¬
-							quoted form of POSIX path of SyncDest & " >> " & ¬
-							quoted form of POSIX path of RealTimeSyncLogsFile)
-					end if
-				end try
-			end if
-			if firstRun is "" then return seconds
-			if RT_Option is "秒" then return RT_Seconds
-			if RT_Option is "魵" then return {RT_Seconds * minutes}
-			if RT_Option_HDW is "鰣" then return {RT_Seconds * hours}
-			if RT_Option_HDW is "日" then return {RT_Seconds * days}
-			if RT_Option_HDW is "週" then return {RT_Seconds * weeks}
-		end if
-	on error errmsg number errnbr
-		if errnbr = -128 then continue quit
-	end try
-end idle
------------------------- 鮟裝鯁新 rsync ------------------------ON.  
-script Update_rsync
-	try
-		tell application "Finder"
-			set rsyncVersion to display dialog ("請嚫鱫的沝女鰰鰎魞欲鮟裝之rsync版本號唷💋 
-鯇整版 默認版本3.1.2") default answer ("3.1.2") buttons ¬
-				{"嗯哼。。好的唷💋"} default button ("嗯哼。。好的唷💋") with title {"純淨鮟裝rsync鯇整版"}
-			set rsyncVersion to (text returned of result)
-			if rsyncVersion is "" then return continue quit
-			set DownloadDestination to POSIX path of ¬
-				(choose folder with prompt "請鰛鰇鱮美鱺沝療癒鯀女鰰選擇欲下載至哪鮕文件夾唷💋")
-			set DownloadDestination1 to DownloadDestination
-			set DownloadDestination1 to quoted form of DownloadDestination1
-			set rsync_Path to POSIX path of (path to me as text) & ("Contents/MacOS")
-			set rsync to (rsync_Path & "/rsync")
-			set rsync_Path to quoted form of rsync_Path
-			set rsync to quoted form of rsync
-			set rsync_Path_bin to POSIX path of (path to me as text) & ("Contents/MacOS/bin/rsync")
-			set rsync_Path_bin to quoted form of rsync_Path_bin
-			set rsync_Path_macOS to POSIX path of (path to me as text) & ("Contents/MacOS")
-			set rsync_Path_macOS to quoted form of rsync_Path_macOS
-			set DDrsyncVersion to quoted form of (DownloadDestination & "rsync-" & rsyncVersion)
-			(do shell script ¬
-				"  
-rm -rf " & rsync & " ;  
-cd " & DownloadDestination1 ¬
-				& ";" & "curl -O https://download.samba.org/pub/rsync/src/rsync-" & rsyncVersion & ".tar.gz ;  
-tar -xzvf rsync-" & rsyncVersion & ".tar.gz ;  
-rm rsync-" & rsyncVersion & ".tar.gz ;  
-curl -O https://download.samba.org/pub/rsync/src/rsync-patches-" & rsyncVersion & ".tar.gz ;  
-tar -xzvf rsync-patches-" & rsyncVersion & ".tar.gz ;  
-rm rsync-patches-" & rsyncVersion & ".tar.gz ;  
-cd rsync-" & rsyncVersion & " ;  
-patch -p1 <patches/fileflags.diff ;  
-patch -p1 <patches/crtimes.diff ;  
-patch -p1 <patches/hfs-compression.diff ;  
-./prepare-source ;  
-./configure --prefix=" & rsync_Path & " ; 
-make install ;  
-mv " & rsync_Path_bin & " " & rsync_Path_macOS & " ; 
-cd " & rsync_Path_macOS & " ; 
-rm -rf bin share " & DDrsyncVersion with administrator privileges)
-		end tell
-		delay 1
-		set isDone to false
-		set itemPath to ("rsync ")
-		set itemProgress to "ps ax | grep -v grep | grep " & itemPath
-		repeat while isDone is false
-			try
-				do shell script itemProgress
-				if the result contains itemPath then
-					delay 1
-				else
-					set isDone to true
-				end if
-			on error
-				set isDone to true
-			end try
-		end repeat
-		if isDone is true then
-			set TerminalNotifier to POSIX path of (path to me as text) & ("Contents/MacOS/terminal-notifier")
-			set TerminalNotifier to quoted form of TerminalNotifier
-			do shell script (TerminalNotifier & " -title 鮟裝鯇成，魺鮦步鰳唷💋")
-			set pdf to quoted form of (DownloadDestination & "鱫鰰rsync.pdf")
-			(do shell script "man -t rsync | pstopdf -i -o " & pdf)
-			run script SingleRsync -- 運行 鱓次鮦步 腳本 
-		end if
-	on error errmsg number errnbr
-		if errnbr = -128 then continue quit
-		continue quit
-	end try
-end script
------------------∞ 鱓次鮦步 ∞-------------------------------ON. 
-script SingleSync
-	try
-		tell application "Finder"
-			set {button returned:RealTimeSync} to ¬
-				display dialog {" 
-請鰛鰇鱮美鱺沝療癒鯀女鰰選擇欲鮦步之模式唷💋"} buttons ¬
-					{"雙向A<+>B鮦步", "鱓向A+>B鮦步", "鱓向A->B鮦步"} with title ¬
-					{"鱓次鮦步"}
-			set SyncSource to ¬
-				(choose folder with prompt " 
-請沝療癒鯀女鰰選擇 A:來源資料夾 唷💋" default location (path to (users folder)))
-			set SyncDest to ¬
-				(choose folder with prompt " 
-請沝療癒鯀女鰰選擇 B:目標資料夾 唷💋" default location (path to (startup disk)))
-			set RealTimeSyncLogsFile to ¬
-				(((path to library folder from user domain) as text) & "logs:rsync.txt")
-			
-			set APPitemPath to POSIX path of (path to me as text) & ("Contents/MacOS/rsync")
-			set APPitemPath to quoted form of APPitemPath
-			
-			set rsyncPath_ParametersPlus to ¬
-				(APPitemPath & " -ESWPaudvxh80AX --stats --exclude={.*,} ")
-			set rsyncPath_ParametersMinus to ¬
-				(APPitemPath & " -ESWPaudvxh80AX --delete --stats --exclude={.*,} ")
-			
-			set TerminalNotifier to POSIX path of (path to me as text) & ("Contents/MacOS/terminal-notifier")
-			set TerminalNotifier to quoted form of TerminalNotifier
-			
-			if RealTimeSync is "雙向A<+>B鮦步" then
-				do shell script (TerminalNotifier & " -title 鮦步中唷💋")
-				(do shell script ¬
-					rsyncPath_ParametersPlus & ¬
-					quoted form of POSIX path of SyncSource & " " & ¬
-					quoted form of POSIX path of SyncDest & " " & ¬
-					quoted form of POSIX path of SyncDest & " " & ¬
-					quoted form of POSIX path of SyncSource)
-				delay 1
-				set isDone to false
-				set itemPath to ("rsync ")
-				set itemProgress to "ps ax | grep -v grep | grep " & itemPath
-				repeat while isDone is false
-					try
-						do shell script itemProgress
-						if the result contains itemPath then
-							delay 1
-						else
-							set isDone to true
-						end if
-					on error
-						set isDone to true
-					end try
-				end repeat
-				if isDone is true then
-					do shell script (TerminalNotifier & " -title 鮦步鯇成鰳唷💋")
-					do shell script ("open " & quoted form of POSIX path of SyncDest)
-					continue quit
-				end if
-			end if
-			if RealTimeSync is "鱓向A+>B鮦步" then
-				do shell script (TerminalNotifier & " -title 鮦步中唷💋")
-				(do shell script ¬
-					rsyncPath_ParametersPlus & ¬
-					quoted form of POSIX path of SyncSource & " " & ¬
-					quoted form of POSIX path of SyncDest)
-				delay 1
-				set isDone to false
-				set itemPath to ("rsync ")
-				set itemProgress to "ps ax | grep -v grep | grep " & itemPath
-				repeat while isDone is false
-					try
-						do shell script itemProgress
-						if the result contains itemPath then
-							delay 1
-						else
-							set isDone to true
-						end if
-					on error
-						set isDone to true
-					end try
-				end repeat
-				if isDone is true then
-					do shell script (TerminalNotifier & " -title 鮦步鯇成鰳唷💋")
-					do shell script ("open " & quoted form of POSIX path of SyncDest)
-					continue quit
-				end if
-			end if
-			if RealTimeSync is "鱓向A->B鮦步" then
-				do shell script (TerminalNotifier & " -title 鮦步中唷💋")
-				(do shell script ¬
-					rsyncPath_ParametersMinus & ¬
-					quoted form of POSIX path of SyncSource & " " & ¬
-					quoted form of POSIX path of SyncDest)
-				delay 1
-				set isDone to false
-				set itemPath to ("rsync ")
-				set itemProgress to "ps ax | grep -v grep | grep " & itemPath
-				repeat while isDone is false
-					try
-						do shell script itemProgress
-						if the result contains itemPath then
-							delay 1
-						else
-							set isDone to true
-						end if
-					on error
-						set isDone to true
-					end try
-				end repeat
-				if isDone is true then
-					do shell script (TerminalNotifier & " -title 鮦步鯇成鰳唷💋")
-					do shell script ("open " & quoted form of POSIX path of SyncDest)
-					continue quit
-				end if
-			end if
-		end tell
-	on error errmsg number errnbr
-		if errnbr = -128 then continue quit
-		continue quit
-	end try
-end script
---💋 ErosLove JuliaComputing.com 💋 
------------------∞ YouTube下載 影音轉換MP3 RamDisk ∞-------------------------------ON.   
-script VideoDownloadConversion
-	try
-		tell application "Finder" to set {button returned:VideoDownloadConversion} to ¬
-			display dialog {"請嚫鱫的沝女鰰選擇 YouTube視頻下載 鱮 影音轉換MP3選項唷💋"} buttons ¬
-				{"YouTube視頻下載 & 鯁新YouTube-Dl", "影音轉換MP3", "鱫鰰RamDisk"} default button 1 with title ¬
-				{"YouTube視頻下載"}
-		
-		if VideoDownloadConversion is "YouTube視頻下載 & 鯁新YouTube-Dl" then
-			tell application "Finder" to set {button returned:UpdateYouTubeDL} to ¬
-				display dialog ("請嚫鱫的沝女鰰選擇 YouTube視頻下載選項唷💋") buttons ¬
-					{"YouTube視頻下載", "鯁新YouTube-Dl"} default button 1 with title ¬
-					{"YouTube視頻下載"}
-			if UpdateYouTubeDL is "YouTube視頻下載" then run script YouTubeVideoDownloads
-			if UpdateYouTubeDL is "鯁新YouTube-Dl" then run script InstallYouTubeDl
-		end if
-		if VideoDownloadConversion is "影音轉換MP3" then run script VideoConversion
-		if VideoDownloadConversion is "鱫鰰RamDisk" then run script createRamDisk
-	on error errmsg number errnbr
-		if errnbr = -128 then continue quit
-		continue quit
-	end try
-end script
------------------------- 鮟裝鯁新 YouTube-Dl ------------------------ON.  
-script InstallYouTubeDl
-	try
-		set YouTubeDl_Path to POSIX path of (path to me as text) & ("Contents/MacOS/youtube-dl")
-		set YouTubeDl_Path to quoted form of YouTubeDl_Path
-		set inBackground to " &> /dev/null &"
-		(do shell script " 
-rm -rf " & YouTubeDl_Path & " ; 
-curl -L https://yt-dl.org/downloads/latest/youtube-dl -o " & YouTubeDl_Path & " ; 
-chmod a+rx " & YouTubeDl_Path with administrator privileges)
-		delay 1
-		set isDone to false
-		set itemPath to ("youtube-dl")
-		set itemProgress to "ps ax | grep -v grep | grep " & itemPath
-		repeat while isDone is false
-			try
-				do shell script itemProgress
-				if the result contains itemPath then
-					delay 1
-				else
-					set isDone to true
-				end if
-			on error
-				set isDone to true
-			end try
-		end repeat
-		if isDone is true then
-			set TerminalNotifier to POSIX path of (path to me as text) & ("Contents/MacOS/terminal-notifier")
-			set TerminalNotifier to quoted form of TerminalNotifier
-			do shell script (TerminalNotifier & " -title 鮟裝鯇成，魺下載影片鰳唷💋")
-			run script YouTubeVideoDownloads -- 運行YouTube下載腳本 
-		end if
-	on error errmsg number errnbr
-		if errnbr = -128 then continue quit
-		continue quit
-	end try
-end script
------------------------∞ YouTube下載 ∞----------------------------------------ON.
-script YouTubeVideoDownloads
-	try
-		tell application "Finder"
-			set VideoURL to display dialog "請嚫鱫的沝女鰰貼上YouTube視頻網址唷💋" default answer "" buttons {"嗯哼。。好的唷💋"} default button 1 with title ¬
-				{"鱫鰰YouTube下載"}
-			set VideoURL to (text returned of result)
-			if VideoURL is "" then return continue quit
-			set APPitemPath to POSIX path of (path to me as text) & ("Contents/MacOS/youtube-dl")
-			set APPitemPath to quoted form of APPitemPath
-			set inBackground to " &> /dev/null &"
-			set YouTubeURL to (VideoURL & inBackground)
-			tell application "Finder" to ¬
-				set DownloadDestination to quoted form of POSIX path of ¬
-					(choose folder with prompt "請鰛鰇鱮美鱺沝療癒鯀女鰰選擇欲下載至哪鮕文件夾唷💋")
-			(do shell script "cd " & DownloadDestination & ";" & APPitemPath & " " & YouTubeURL)
-			set TerminalNotifier to POSIX path of (path to me as text) & ("Contents/MacOS/terminal-notifier")
-			set TerminalNotifier to quoted form of TerminalNotifier
-			(do shell script TerminalNotifier & " -title 視頻下載中，請稍候唷💋")
-			delay 1
-			set isDone to false
-			set itemPath to ("youtube-dl")
-			set itemProgress to "ps ax | grep -v grep | grep " & itemPath
-			repeat while isDone is false
-				try
-					do shell script itemProgress
-					if the result contains itemPath then
-						delay 1
-					else
-						set isDone to true
-					end if
-				on error
-					set isDone to true
-				end try
-			end repeat
-			if isDone is true then
-				do shell script (TerminalNotifier & " -title 視頻下載鯇成鰳唷💋")
-				do shell script ("open " & DownloadDestination)
-				continue quit
-			end if
-		end tell
-	on error errmsg number errnbr
-		if errnbr = -128 then continue quit
-		continue quit
-	end try
-end script
-----------------------------∞ ffmpeg轉換選項 ∞----------------------------------------ON. 
-script VideoConversion
-	try
-		tell application "Finder" to set {button returned:ConversionOption} to ¬
-			display dialog {"請嚫鱫的沝女鰰選擇 影音轉換MP3 選項唷💋"} buttons ¬
-				{"鱓件-影音轉換𩻟MP3", "批量-影音轉換𩻟MP3"} default button 1 with title ¬
-				{"ffmpeg轉換選項"}
-		if ConversionOption is "鱓件-影音轉換𩻟MP3" then run script SinglePiece
-		if ConversionOption is "批量-影音轉換𩻟MP3" then run script BatchConversion
-	on error errmsg number errnbr
-		if errnbr = -128 then continue quit
-		continue quit
-	end try
-end script
--------------------------∞ 鱓件-影音轉換𩻟MP3 ∞----------------------------------------ON.
-script SinglePiece
-	try
-		tell application "Finder"
-			set Input to POSIX path of ¬
-				(choose file with prompt ("請鰛鰇鱮美鱺沝療癒鯀女鰰選擇欲轉換𩻟 MP3 之 文件唷💋"))
-			set BitConversion to display dialog ("請嚫鱫的沝女鰰鰎魞轉換 位元率 唷💋 
-例: 320  256  192  128  64 
-默認 320 唷💋") default answer ("320") buttons {"嗯哼。。好的唷💋"} default button 1 with title ¬
-				{"鱓件-影音轉換𩻟MP3"}
-		end tell
-		set BitConversion to (text returned of result)
-		if BitConversion is "" then return continue quit
-		set APPitemPath to POSIX path of (path to me as text) ¬
-			& {"Contents/MacOS/ffmpeg"}
-		set APPitemPath to quoted form of APPitemPath
-		set InputPath to remove_path(Input)
-		set InputPath to quoted form of InputPath
-		set mk to ("cd " & InputPath & ";mkdir -p _MP3" & ";cd ; ")
-		set Output to remove_extension(Input)
-		set Output to quoted form of (Output & ".mp3")
-		set ConversionParameter to (" -ab " & BitConversion & "k -ac 2 -ar 48000 ")
-		set Input to quoted form of Input
-		set FFmpegConversion to ¬
-			(APPitemPath & " -nostats -nostdin -n -i " & Input & ConversionParameter & Output)
-		set inBackground to " &> /dev/null &"
-		set FFmpeg to mk & FFmpegConversion & inBackground
-		do shell script FFmpeg
-		set TerminalNotifier to POSIX path of (path to me as text) ¬
-			& {"Contents/MacOS/terminal-notifier"}
-		set TerminalNotifier to quoted form of TerminalNotifier
-		do shell script (TerminalNotifier & " -title 轉換中，請稍候唷💋")
-		delay 1
-		set isDone to false
-		set itemPath to ("ffmpeg")
-		set itemProgress to "ps ax | grep -v grep | grep " & itemPath
-		repeat while isDone is false
-			try
-				do shell script itemProgress
-				if the result contains itemPath then
-					delay 1
-				else
-					set isDone to true
-				end if
-			on error
-				set isDone to true
-			end try
-		end repeat
-		if isDone is true then
-			set MP3 to (InputPath & "/_MP3")
-			do shell script ("cd " & InputPath & ";mv *.mp3 " & MP3 & ";cd ;")
-			do shell script (TerminalNotifier & " -title 轉換鯇成鰳唷💋")
-			do shell script ("open " & MP3)
-			continue quit
-		end if
-	on error errmsg number errnbr
-		if errnbr = -128 then continue quit
-		continue quit
-	end try
-	on remove_path(this_name)
-		try
-			set oldDelims to AppleScript's text item delimiters
-			set AppleScript's text item delimiters to {"/"}
-			if number of text items of this_name > 1 then
-				set this_name to (text items 1 thru -2 of this_name as text)
-			end if
-			set AppleScript's text item delimiters to oldDelims
-		on error
-			set AppleScript's text item delimiters to oldDelims
-		end try
-		return this_name
-	end remove_path
-	on remove_extension(this_name)
-		try
-			set oldDelims to AppleScript's text item delimiters
-			set AppleScript's text item delimiters to {"."}
-			if number of text items of this_name > 1 then
-				set this_name to (text items 1 thru -2 of this_name as text)
-			end if
-			set AppleScript's text item delimiters to oldDelims
-		on error
-			set AppleScript's text item delimiters to oldDelims
-		end try
-		return this_name
-	end remove_extension
-end script
--------------------------∞ 批量-影音轉換𩻟MP3 ∞----------------------------------------ON. 
-script BatchConversion
-	try
-		tell application "Finder"
-			set Input to ¬
-				(choose folder with prompt "請鰛鰇鱮美鱺沝療癒鯀女鰰選擇欲轉換𩻟 MP3 之 文件夾唷💋")
-			set media to files of entire contents of folder Input
-			set BitConversion to display dialog ("請嚫鱫的沝女鰰鰎魞轉換 位元率 唷💋 
-例: 320  256  192  128  64 
-默認 320 唷💋") default answer ("320") buttons {"嗯哼。。好的唷💋"} default button 1 with title ¬
-				{"批量-影音轉換𩻟MP3"}
-		end tell
-		set BitConversion to (text returned of result)
-		if BitConversion is "" then return continue quit
-		set APPitemPath to POSIX path of (path to me as text) ¬
-			& {"Contents/MacOS/ffmpeg"}
-		set APPitemPath to quoted form of APPitemPath
-		set Input1 to POSIX path of Input
-		set Input2 to quoted form of Input1
-		set mk to ("cd " & Input2 & ";mkdir -p _MP3" & ";cd ; ")
-		repeat with i in media
-			set fileName to i as string
-			set Input to POSIX path of fileName
-			set Output to remove_extension(Input)
-			set Output to quoted form of (Output & ".mp3")
-			set Input to quoted form of Input
-			set ConversionParameter to (" -ab " & BitConversion & "k -ac 2 -ar 48000 ")
-			set FFmpegConversion to ¬
-				(APPitemPath & " -nostats -nostdin -n -i " & ¬
-					Input & ConversionParameter & Output)
-			set inBackground to " &> /dev/null &"
-			set FFmpeg to mk & FFmpegConversion & inBackground
-			do shell script FFmpeg
-		end repeat
-		set TerminalNotifier to POSIX path of (path to me as text) ¬
-			& {"Contents/MacOS/terminal-notifier"}
-		set TerminalNotifier to quoted form of TerminalNotifier
-		do shell script (TerminalNotifier & " -title 轉換中，請稍候唷💋")
-		delay 1
-		set isDone to false
-		set itemPath to ("ffmpeg")
-		set itemProgress to "ps ax | grep -v grep | grep " & itemPath
-		repeat while isDone is false
-			try
-				do shell script itemProgress
-				if the result contains itemPath then
-					delay 1
-				else
-					set isDone to true
-				end if
-			on error
-				set isDone to true
-			end try
-		end repeat
-		if isDone is true then
-			set MP3 to Input1 & "_MP3"
-			set MP3 to quoted form of MP3
-			do shell script ("cd " & Input2 & ";mv *.mp3 " & MP3 & ";cd ;")
-			do shell script (TerminalNotifier & " -title 轉換鯇成鰳唷💋")
-			do shell script ("open " & MP3)
-			continue quit
-		end if
-	on error errmsg number errnbr
-		if errnbr = -128 then continue quit
-		continue quit
-	end try
-	on remove_extension(this_name)
-		if this_name contains "." then
-			set this_name to ¬
-				(the reverse of every character of this_name) as string
-			set x to the offset of "." in this_name
-			set this_name to (text (x + 1) thru -1 of this_name)
-			set this_name to (the reverse of every character of this_name) as string
-		end if
-		return this_name
-	end remove_extension
-end script
----------------------------∞ RamDisk ∞----------------------------------------ON.   
-script createRamDisk
-	try
-		tell application "Finder"
-			set RamDiskSize to ¬
-				display dialog {" 
-請嚫鱫的鰛鰇鱮美鱺沝女鰰鰎魞所需 RamDisk G數 唷💋 
-默認 4G 唷💋"} default answer ("4") buttons ¬
-					{"嗯哼。。好的唷💋"} default button ("嗯哼。。好的唷💋")
-			set RamDiskSize to {text returned of the result}
-			if RamDiskSize is "" then return continue quit
-			set RamDiskName to quoted form of ("鱫鰰RamDisk")
-			set RamDiskSize to {RamDiskSize * 1024 * 2048}
-			do shell script {"hdiutil attach -nomount ram://" & RamDiskSize}
-			set RamDiskImg to {the result}
-			set RamDisk to {the last text item of RamDiskImg}
-			set RamDiskShellCmd to {" newfs_hfs -v " & RamDiskName & " -s " & RamDisk as text}
-			do shell script (RamDiskShellCmd)
-			do shell script {" diskutil mount " & RamDisk}
-			{do shell script (" 
-cd /Volumes/" & RamDiskName & " ; 
-mkdir -p _應用快鯫 下載 文件 音樂 圖片 影片 ; 
-cd /Volumes/" & RamDiskName & "/_應用快鯫 ; 
-mkdir -p Xcode Safari Google ; 
-rm -rf ~/Library/Developer/Xcode/DerivedData ~/Library/Caches/com.apple.Safari ~/Library/Caches/Google ; 
-ln -s /Volumes/" & RamDiskName & "/_應用快鯫/Xcode ~/Library/Developer/Xcode/DerivedData ; 
-ln -s /Volumes/" & RamDiskName & "/_應用快鯫/Safari ~/Library/Caches/com.apple.Safari ; 
-ln -s /Volumes/" & RamDiskName & "/_應用快鯫/Google ~/Library/Caches/Google ; 
-cd ;") with administrator privileges}
-		end tell
-		set isDone to false
-		set itemPath to ("鱫鰰RamDisk")
-		set itemProgress to "ps ax | grep -v grep | grep " & itemPath
-		repeat while isDone is false
-			try
-				do shell script itemProgress
-				if the result contains itemPath then
-					delay 1
-				else
-					set isDone to true
-				end if
-			on error
-				set isDone to true
-			end try
-		end repeat
-		if isDone is true then
-			set TerminalNotifier to POSIX path of (path to me as text) & ("Contents/MacOS/terminal-notifier")
-			set TerminalNotifier to quoted form of TerminalNotifier
-			do shell script (TerminalNotifier & " -title RamDisk已鰎䲞鰳唷💋")
-			continue quit
-		end if
-	on error errmsg number errnbr
-		if errnbr = -128 then continue quit
-		continue quit
-	end try
-end script
------------------------∞ macOS開機鰈鱮ISO鯯作 ∞----------------------------------------ON. 
-script macOSBoot
-	try
-		tell application "Finder" to set {button returned:macOSBoot} to ¬
-			display dialog ("
-請鰛鰇鱮美鱺沝療癒鯀女鰰選擇欲鯯作 開機鰈 或 ISO 唷💋") buttons ¬
-				{"開機鰈", "ISO"} with title ¬
-				{"macOS開機鰈鱮ISO鯯作"}
-		if macOSBoot is "ISO" then run script macOSBootISO
-		if macOSBoot is "開機鰈" then run script macOSBootUSB_BackgroundProcessing
-	on error errmsg number errnbr
-		if errnbr = -128 then continue quit
-		continue quit
-	end try
-end script
----------------------∞ 鱫鰰macOS開機鰈鯯作(後台處理版) ∞----------------------------ON. 
-script macOSBootUSB_BackgroundProcessing
-	try
-		tell application "Finder"
-			set InstallmacOS to ¬
-				POSIX path of (choose file with prompt {" 
-請鰛鰇鱮美鱺沝療癒鯀女鰰選擇欲鯯作開機鰈之macOS來源版本唷💋"} default location (path to (applications folder)))
-			
-			set ErosDestUSB to ¬
-				quoted form of POSIX path of (choose folder with prompt {" 
-請鰛鰇鱮美鱺沝療癒鯀女鰰選擇欲鯯作開機鰈之 目標USB 唷💋"} default location (path to (startup disk)))
-			
-			set CreateInstallMedia to quoted form of (InstallmacOS & "Contents/Resources/createinstallmedia")
-			set NewVersion to (CreateInstallMedia & " --volume ")
-			set InstallmacOS to quoted form of InstallmacOS
-			set OldVersion to (" --applicationpath " & InstallmacOS & " --nointeraction")
-			set inBackground to " &> /dev/null &"
-			set BackgroundProcessing to NewVersion & ErosDestUSB & OldVersion & inBackground
-			(do shell script BackgroundProcessing with administrator privileges)
-			delay 1
-			set isDone to false
-			set itemPath to ("createinstallmedia")
-			set itemProgress to "ps ax | grep -v grep | grep " & itemPath
-			repeat while isDone is false
-				try
-					do shell script itemProgress
-					if the result contains itemPath then
-						delay 1
-					else
-						set isDone to true
-					end if
-				on error
-					set isDone to true
-				end try
-			end repeat
-			if isDone is true then
-				set TerminalNotifier to POSIX path of (path to me as text) & ("Contents/MacOS/terminal-notifier")
-				set TerminalNotifier to quoted form of TerminalNotifier
-				do shell script (TerminalNotifier & " -title 開機鰈鯯作鯇成鰳唷💋")
-				do shell script ("open " & ErosDestUSB)
-				continue quit
-			end if
-		end tell
-	on error errmsg number errnbr
-		if errnbr = -128 then continue quit
-		continue quit
-	end try
-end script
----------------------------∞ macOS ISO鯯作 ∞----------------------------------------ON. 
-script macOSBootISO
-	try
-		tell application "Finder"
-			display dialog ("
-請沝女鰰移除所有外鯜磁鰈再䲀行唷💋 
-鯇成後鱠鯲桌面上顯䱈副檔名𩻟 iso 的檔案唷💋 
-等待鯇成鯽魺唷💋") with title ¬
-				{"macOS ISO鯯作"}
-			
-			set InstallmacOS to ¬
-				(choose file with prompt {"
-請鰛鰇鱮美鱺沝療癒鯀女鰰選擇欲鯯作ISO之macOS來源版本唷💋"} default location (path to (applications folder)))
-			
-			set ISOsize to InstallmacOS's size as string
-			set ISOsize to characters 4 thru 1 of ISOsize
-			set VolumesEros to quoted form of ("/Volumes/鱫鰰")
-			set InstallmacOSpath to POSIX path of InstallmacOS
-			set CreateInstallMedia to quoted form of (InstallmacOSpath & "Contents/Resources/createinstallmedia")
-			set InstallmacOSname to InstallmacOS's name as string
-			set InstallmacOSname to text 1 thru ((offset of "." in InstallmacOSname) - 1) of InstallmacOSname
-			set InstallmacOSnameExtension to quoted form of (InstallmacOSname & ".iso")
-			set InstallmacOSname to quoted form of InstallmacOSname
-			set InstallmacOSpath to quoted form of InstallmacOSpath
-			set inBackground to " &> /dev/null &"
-			{do shell script " 
-hdiutil create -o /tmp/macOS.cdr -size " & ISOsize & "gb -layout SPUD -fs HFS+J ; 
-hdiutil attach /tmp/macOS.cdr.dmg -noverify -mountpoint " & VolumesEros & " ; 
-" & CreateInstallMedia & " --volume " & VolumesEros & " --applicationpath " & InstallmacOSpath & " --nointeraction ;  
-hdiutil detach /Volumes/" & InstallmacOSname & " ; 
-hdiutil convert /tmp/macOS.cdr.dmg -format UDTO -o /tmp/macOS.iso ; 
-mv /tmp/macOS.iso.cdr ~/Desktop/" & InstallmacOSnameExtension & " ; 
-rm /tmp/macOS.cdr.dmg ; " & inBackground with administrator privileges}
-			delay 1
-			set isDone to false
-			set itemPath to ("/tmp/macOS.iso")
-			set itemProgress to "ps ax | grep -v grep | grep " & itemPath
-			repeat while isDone is false
-				try
-					do shell script itemProgress
-					if the result contains itemPath then
-						delay 1
-					else
-						set isDone to true
-					end if
-				on error
-					set isDone to true
-				end try
-			end repeat
-			if isDone is true then
-				set TerminalNotifier to POSIX path of (path to me as text) & ("Contents/MacOS/terminal-notifier")
-				set TerminalNotifier to quoted form of TerminalNotifier
-				do shell script (TerminalNotifier & " -title ISO鯯作鯇成鰳唷💋")
-				continue quit
-			end if
-		end tell
-	on error errmsg number errnbr
-		if errnbr = -128 then continue quit
-		continue quit
-	end try
-end script
-----------------------------∞ 鱫鰰APFS助手 ∞------------------------------ON. 
 script APFShelper
 	try
-		tell application "Finder"
-			set {button returned:APFS_Option} to ¬
-				display dialog ("請嚫鱫的沝女鰰選擇 鱫鰰APFS助手 選項唷💋") buttons ¬
-					{"刪除APFS容器並將舊磁盤重新格式化為HFS", "從其APFS容器中刪除APFS卷"} with title ¬
-					{"鱫鰰APFS助手"}
-			if APFS_Option is "刪除APFS容器並將舊磁盤重新格式化為HFS" then run script deleteContainer
-			if APFS_Option is "從其APFS容器中刪除APFS卷" then run script deleteVolume
-		end tell
-	on error errmsg number errnbr
-		if errnbr = -128 then continue quit
-		continue quit
-	end try
-end script
--------------------∞ 刪除APFS容器並將舊磁盤重新格式化為HFS ∞--------------------ON. 
-script deleteContainer
-	try
-		tell application "Finder"
-			display dialog (" 
-請嚫鱫的沝女鰰記住欲變鯁之APFS的磁鰈號唷💋 
-例: disk1s2 ")
-			tell application "Terminal"
-				if not (exists window 1) then reopen
-				activate
-				set size of window 1 to {550, 1200}
-				(do script ("diskutil list ") in window 1)
-				tell application "System Events" to key code 2 & 34 & 1 & 40 & 32 & 17 & 34 & 37 & 49 & 0 & 35 & 3 & 1 & 49 & 2 & 14 & 37 & 14 & 17 & 14 & 8 & 31 & 45 & 17 & 0 & 34 & 45 & 14 & 15 & 49 & 2 & 34 & 1 & 40
-			end tell
-			continue quit
-		end tell
-	on error errmsg number errnbr
-		if errnbr = -128 then continue quit
-		continue quit
-	end try
-end script
---------------------------∞ 從其APFS容器中刪除APFS卷 ∞---------------------------ON. 
-script deleteVolume
-	try
-		tell application "Finder"
-			display dialog (" 
-請嚫鱫的沝女鰰記住欲變鯁之APFS的磁鰈號唷💋 
-例: disk1s2 ")
-			tell application "Terminal"
-				if not (exists window 1) then reopen
-				activate
-				set size of window 1 to {550, 1200}
-				(do script ("diskutil list ") in window 1)
-				tell application "System Events" to key code 2 & 34 & 1 & 40 & 32 & 17 & 34 & 37 & 49 & 0 & 35 & 3 & 1 & 49 & 2 & 14 & 37 & 14 & 17 & 14 & 9 & 31 & 37 & 32 & 46 & 14 & 49 & 2 & 34 & 1 & 40
-			end tell
-			continue quit
-		end tell
-	on error errmsg number errnbr
-		if errnbr = -128 then continue quit
-		continue quit
-	end try
-end script
----------------------------∞ 鱫鰰macOS下載助手 ∞----------------------------ON. 
-script macOSDownload
-	try
-		tell application "Finder"
-			set {button returned:SelectDownloadVersion} to ¬
-				display dialog ("請嚫鱫的沝女鰰選擇欲下載之macOS版本唷💋") buttons ¬
-					{"Catalina & Mojave", "HighSierra & Sierra & El Capitan"} with title ¬
-					{"鱫鰰macOS下載助手"}
-			if SelectDownloadVersion is "Catalina & Mojave" then
-				set {button returned:SelectVersion} to ¬
-					display dialog ("請嚫鱫的沝女鰰選擇欲下載之macOS版本唷💋") buttons ¬
-						{"Catalina", "Mojave"} with title ¬
-						{"鱫鰰macOS下載助手"}
-				if SelectVersion is "Catalina" then run script Catalina
-				if SelectVersion is "Mojave" then run script Mojave
-			end if
-			if SelectDownloadVersion is "HighSierra & Sierra & El Capitan" then
-				set {button returned:HighSierra_Sierra_ElCapitan} to ¬
-					display dialog ("請嚫鱫的沝女鰰選擇欲下載之macOS版本唷💋") buttons ¬
-						{"HighSierra", "Sierra", "El Capitan"} with title ¬
-						{"鱫鰰macOS下載助手"}
-				if HighSierra_Sierra_ElCapitan is "HighSierra" then run script HighSierra
-				if HighSierra_Sierra_ElCapitan is "Sierra" then run script Sierra
-				if HighSierra_Sierra_ElCapitan is "El Capitan" then run script El_Capitan
-			end if
-		end tell
-	on error errmsg number errnbr
-		if errnbr = -128 then continue quit
-		continue quit
-	end try
-end script
------------------------- 下載 Catalina ------------------------ON. 
-script Catalina
-	try
-		set Catalina_URL to ("https://www.apple.com/macos/catalina/")
-		tell application "Google Chrome" to activate (open location Catalina_URL)
+		set APPname to ("鱫鰰APFS助手")
+		set APPpath to POSIX path of (path to me as text) ¬
+			& {"Contents/Resources/Scripts/" & APPname & ".app"}
+		set APPpath to quoted form of APPpath
+		(do shell script (" open -n " & APPpath))
 		continue quit
 	on error errmsg number errnbr
 		if errnbr = -128 then continue quit
 		continue quit
 	end try
 end script
------------------------- 下載 Mojave ------------------------ON. 
-script Mojave
+
+script iCloudDriveSync
 	try
-		set Mojave_URL to ("https://apps.apple.com/tw/app/macos-mojave/id1398502828?ls=1&mt=12")
-		tell application "Google Chrome" to activate (open location Mojave_URL)
+		set APPname to ("鱫鰰iCloudDrive使用者鮦步")
+		set APPpath to POSIX path of (path to me as text) ¬
+			& {"Contents/Resources/Scripts/" & APPname & ".app"}
+		set APPpath to quoted form of APPpath
+		(do shell script (" open -n " & APPpath))
 		continue quit
 	on error errmsg number errnbr
 		if errnbr = -128 then continue quit
 		continue quit
 	end try
 end script
------------------------- 下載 High Sierra ------------------------ON. 
-script HighSierra
+
+script createRamDisk
 	try
-		set HighSierra_URL to ("https://apps.apple.com/tw/app/macos-high-sierra/id1246284741?ls=1&mt=12")
-		tell application "Google Chrome" to activate (open location HighSierra_URL)
+		set APPname to ("鱫鰰macOS RamDisk")
+		set APPpath to POSIX path of (path to me as text) ¬
+			& {"Contents/Resources/Scripts/" & APPname & ".app"}
+		set APPpath to quoted form of APPpath
+		(do shell script (" open -n " & APPpath))
 		continue quit
 	on error errmsg number errnbr
 		if errnbr = -128 then continue quit
 		continue quit
 	end try
 end script
------------------------- 下載 Sierra ------------------------ON. 
-script Sierra
+
+script macOS_Download_Helper
 	try
-		set Sierra_URL to ("https://apps.apple.com/tw/app/macos-sierra/id1127487414?ls=1&mt=12")
-		tell application "Google Chrome" to activate (open location Sierra_URL)
+		set APPname to ("鱫鰰macOS下載助手")
+		set APPpath to POSIX path of (path to me as text) ¬
+			& {"Contents/Resources/Scripts/" & APPname & ".app"}
+		set APPpath to quoted form of APPpath
+		(do shell script (" open -n " & APPpath))
 		continue quit
 	on error errmsg number errnbr
 		if errnbr = -128 then continue quit
 		continue quit
 	end try
 end script
------------------------- 下載 El_Capitan ------------------------ON. 
-script El_Capitan
+
+script macOSinstall_USB_ISO
 	try
-		set El_Capitan_URL to ("https://apps.apple.com/app/os-x-el-capitan/id1147835434?ls=1&mt=12")
-		tell application "Google Chrome" to activate (open location El_Capitan_URL)
+		set APPname to ("鱫鰰macOS開機鰈鱮ISO鯯作")
+		set APPpath to POSIX path of (path to me as text) ¬
+			& {"Contents/Resources/Scripts/" & APPname & ".app"}
+		set APPpath to quoted form of APPpath
+		(do shell script (" open -n " & APPpath))
+		continue quit
+	on error errmsg number errnbr
+		if errnbr = -128 then continue quit
+		continue quit
+	end try
+end script
+
+script ErosRTsync
+	try
+		set APPname to ("鱫鰰macOS實鰣鮦步")
+		set APPpath to POSIX path of (path to me as text) ¬
+			& {"Contents/Resources/Scripts/" & APPname & ".app"}
+		set APPpath to quoted form of APPpath
+		(do shell script (" open -n " & APPpath))
+		continue quit
+	on error errmsg number errnbr
+		if errnbr = -128 then continue quit
+		continue quit
+	end try
+end script
+
+script YouTubeDownloader_MP4toMp3
+	try
+		set APPname to ("鱫鰰YouTube下載鱮視頻轉換mp3")
+		set APPpath to POSIX path of (path to me as text) ¬
+			& {"Contents/Resources/Scripts/" & APPname & ".app"}
+		set APPpath to quoted form of APPpath
+		(do shell script (" open -n " & APPpath))
 		continue quit
 	on error errmsg number errnbr
 		if errnbr = -128 then continue quit
@@ -1133,7 +206,6 @@ script OpenScript
 		continue quit
 	end try
 end script
-
 --💋 ErosLove JuliaComputing.com 💋 
 ------------------------------∞ 鱫鰰鏡之鰣空 ∞----------------------------------------END. 
 
