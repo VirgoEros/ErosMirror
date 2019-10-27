@@ -1,4 +1,6 @@
 (* 
+鱫鰰裸軟 - 鱫鰰鏡之鰣空 
+
 Apple.com/Mac-Pro 
 Apple.com/Pro-Display-XDR 
 
@@ -6,17 +8,15 @@ Apple.com/Pro-Display-XDR
 
 macOS Catalina 
 
-bit.ly/下載_Install_macOS_High_Sierra_iso      <-- APFS 
-bit.ly/下載_Install_macOS_Sierra_iso                  <-- HFS+ 
+bit.ly/下載_Install_macOS_High_Sierra_iso 
+bit.ly/下載_Install_macOS_Sierra_iso 
 
-風扇控鯯Mac 
-風扇控鯯Windows 
-
-無簽章之(簡易裸程式)吥鰎議鯲 macOS Mojave 鯀統使用唷🤣  鰎議鯲   macOS High Sierra macOS Sierra macOS El Capitan   鯀統使用唷💋 
+無簽章之(簡易裸程式)吥鰎議鯲 macOS Mojave 鯀統使用唷🤣 
+鰎議鯲   macOS High Sierra     macOS Sierra     macOS El Capitan   鯀統使用唷💋 
 
 AppleScript 
 下載: bit.ly/鱫鰰鏡之鰣空 ¬ 
-{"macOS實鰣鮦步 & iCloudDrive使用者鮦步", "YouTube下載 & 影音轉換MP3 & RamDisk", "macOS開機鰈鱮ISO鯯作 & APFS助手 & macOS下載助手 & 開啟鱫鰰鏡之鰣空腳本"} 
+{"macOS實鰣鮦步 & 重新鮟裝rsync", "YouTube下載 & 影音轉換MP3 & RamDisk", "macOS開機鰈鱮ISO鯯作 & APFS助手 & macOS下載助手 & 開啟鱫鰰鏡之鰣空腳本"}  
 
 倘鰙沝女鰰對macOS實鰣鮦步有多開需鯄魺下載使用唷💋 
 倘鰙沝女鰰首次鰎䲞RamDisk鱞請沝女鰰關閉瀏灠器鱮所有程式再執行唷💋 
@@ -37,7 +37,7 @@ https://www.youtube.com/channel/UCdQlnh4GCQSGXmTPQg5MKGQ/videos
 倘鰙無法下載視頻，請沝女鰰 鯁新 YouTube-Dl 鯽魺唷💋  
 
 JuliaComputing.com    Julialang.org    鮢鯏𩸋 (𩸍魿行版)   
-*) 
+*)
 ---------------------------------∞ 鱫鰰鏡之鰣空 ∞----------------------------------------ON. 
 global ErosTSMirror, VideoDownloadConversion, ISO_APFS_OpenScript_Option, macOSBoot, ISO_APFS_macOSDownload_OpenScript_Option, APFShelper, macOSDownload, OpenScript, rsyncOption, Update_rsync, SyncMode, SingleSync, RealTimeSync, SyncSource, SyncDest, RealTimeSyncLogsFile, APPitemPath, rsyncPath_ParametersPlus, rsyncPath_ParametersMinus, TerminalNotifier, isDone, itemPath, itemProgress, firstRun, RT_Seconds, RT_Option, RT_Option_HDW, errmsg, errnbr
 global SyncMode, firstRun, RT_Seconds, RealTimeSync, rsyncPath_ParametersPlus, rsyncPath_ParametersMinus, SyncSource, SyncDest, RealTimeSyncLogsFile, RT_Option, RT_Option_HDW, errmsg, errnbr
@@ -892,6 +892,7 @@ script macOSBootUSB_BackgroundProcessing
 				set TerminalNotifier to POSIX path of (path to me as text) & ("Contents/MacOS/terminal-notifier")
 				set TerminalNotifier to quoted form of TerminalNotifier
 				do shell script (TerminalNotifier & " -title 開機鰈鯯作鯇成鰳唷💋")
+				delay 1
 				do shell script ("open " & ErosDestUSB)
 				continue quit
 			end if
