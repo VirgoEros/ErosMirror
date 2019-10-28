@@ -501,7 +501,7 @@ end script
 script VideoDownloadConversion
 	try
 		tell application "Finder" to set {button returned:VideoDownloadConversion} to ¬
-			display dialog {"請嚫鱫的沝女鰰選擇 YouTube視頻下載 鱮 影音轉換MP3選項唷💋"} buttons ¬
+			display dialog {"請嚫鱫的沝女鰰選擇 YouTube視頻下載 鱮 MP4轉換MP3選項唷💋"} buttons ¬
 				{"YouTube視頻下載 & 鯁新YouTube-Dl", "MP4轉換MP3", "鱫鰰RamDisk"} default button 1 with title ¬
 				{"YouTube視頻下載"}
 		
