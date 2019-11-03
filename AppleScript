@@ -792,7 +792,13 @@ script createRamDisk
 					{"嗯哼。。好的唷💋"} default button ("嗯哼。。好的唷💋")
 			set RamDiskSize to {text returned of the result}
 			if RamDiskSize is "" then return continue quit
-			set RamDiskName to quoted form of ("鱫鰰RamDisk")
+			set RamDiskName to ¬
+				display dialog {" 
+請嚫鱫的鰛鰇鱮美鱺沝女鰰鰎魞RamDisk名稱唷💋 
+默認𩻟 鱫鰰RamDisk 唷💋"} default answer (quoted form of "鱫鰰RamDisk") buttons ¬
+					{"嗯哼。。好的唷💋"} default button ("嗯哼。。好的唷💋")
+			set RamDiskName to {text returned of the result}
+			if RamDiskName is "" then return continue quit
 			set RamDiskSize to {RamDiskSize * 1024 * 2048}
 			do shell script {"hdiutil attach -nomount ram://" & RamDiskSize}
 			set RamDiskImg to {the result}
@@ -812,7 +818,7 @@ ln -s /Volumes/" & RamDiskName & "/_應用快鯫/Google ~/Library/Caches/Google 
 cd ;") with administrator privileges}
 		end tell
 		set isDone to false
-		set itemPath to ("鱫鰰RamDisk")
+		set itemPath to (RamDiskName)
 		set itemProgress to "ps ax | grep -v grep | grep " & itemPath
 		repeat while isDone is false
 			try
