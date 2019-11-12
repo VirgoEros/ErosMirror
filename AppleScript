@@ -809,12 +809,8 @@ script createRamDisk
 			{do shell script (" 
 cd /Volumes/" & RamDiskName & " ; 
 mkdir -p _應用快鯫 下載 文件 音樂 圖片 影片 ; 
-cd /Volumes/" & RamDiskName & "/_應用快鯫 ; 
-mkdir -p Xcode Safari Google ; 
-rm -rf ~/Library/Developer/Xcode/DerivedData ~/Library/Caches/com.apple.Safari ~/Library/Caches/Google ; 
-ln -s /Volumes/" & RamDiskName & "/_應用快鯫/Xcode ~/Library/Developer/Xcode/DerivedData ; 
-ln -s /Volumes/" & RamDiskName & "/_應用快鯫/Safari ~/Library/Caches/com.apple.Safari ; 
-ln -s /Volumes/" & RamDiskName & "/_應用快鯫/Google ~/Library/Caches/Google ; 
+rm -rf ~/Library/Caches/Google ; 
+ln -s /Volumes/" & RamDiskName & "/_應用快鯫 ~/Library/Caches/Google ; 
 cd ;") with administrator privileges}
 		end tell
 		set isDone to false
@@ -933,6 +929,8 @@ script macOSBootISO
 			set InstallmacOSname to quoted form of InstallmacOSname
 			set InstallmacOSpath to quoted form of InstallmacOSpath
 			set inBackground to " &> /dev/null &"
+			do shell script "open " & quoted form of ("/Applications/Install macOS Catalina.app")
+			tell application "System Events" to key code (55 & 12)
 			{do shell script " 
 hdiutil create -o /tmp/macOS.cdr -size " & ISOsize & "gb -layout SPUD -fs HFS+J ; 
 hdiutil attach /tmp/macOS.cdr.dmg -noverify -mountpoint " & VolumesEros & " ; 
