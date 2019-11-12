@@ -999,7 +999,7 @@ script deleteContainer
 			set DiskutilList to do shell script ("diskutil list ")
 			display dialog DiskutilList
 			set InputDiskNumber to display dialog "請嚫鱫的沝女鰰鰎魞欲變鯁之APFS的磁鰈號唷💋 " default answer "" buttons {"嗯哼。。好的唷💋"} default button 1 with title ¬
-				{"鱫鰰YouTube下載"}
+				{"鱫鰰APFS助手"}
 			set InputDiskNumber to (text returned of result)
 			if InputDiskNumber is "" then return continue quit
 			do shell script ("diskutil apfs deletecontainer " & InputDiskNumber)
@@ -1025,7 +1025,7 @@ script deleteVolume
 			set DiskutilList to do shell script ("diskutil list ")
 			display dialog DiskutilList
 			set InputDiskNumber to display dialog "請嚫鱫的沝女鰰鰎魞欲變鯁之APFS的磁鰈號唷💋 " default answer "" buttons {"嗯哼。。好的唷💋"} default button 1 with title ¬
-				{"鱫鰰YouTube下載"}
+				{"鱫鰰APFS助手"}
 			set InputDiskNumber to (text returned of result)
 			if InputDiskNumber is "" then return continue quit
 			do shell script ("diskutil apfs deleteVolume " & InputDiskNumber)
