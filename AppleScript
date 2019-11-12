@@ -929,8 +929,6 @@ script macOSBootISO
 			set InstallmacOSname to quoted form of InstallmacOSname
 			set InstallmacOSpath to quoted form of InstallmacOSpath
 			set inBackground to " &> /dev/null &"
-			do shell script "open " & quoted form of ("/Applications/Install macOS Catalina.app")
-			tell application "System Events" to key code (55 & 12)
 			{do shell script " 
 hdiutil create -o /tmp/macOS.cdr -size " & ISOsize & "gb -layout SPUD -fs HFS+J ; 
 hdiutil attach /tmp/macOS.cdr.dmg -noverify -mountpoint " & VolumesEros & " ; 
