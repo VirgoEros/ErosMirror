@@ -139,7 +139,9 @@ on run
 								(do shell script ¬
 									rsyncPath_ParametersPlus & ¬
 									quoted form of POSIX path of SyncSource & " " & ¬
-									quoted form of POSIX path of SyncDest & " " & ¬
+									quoted form of POSIX path of SyncDest)
+								(do shell script ¬
+									rsyncPath_ParametersPlus & ¬
 									quoted form of POSIX path of SyncDest & " " & ¬
 									quoted form of POSIX path of SyncSource)
 								delay 1
@@ -271,7 +273,10 @@ on idle
 						(do shell script ¬
 							rsyncPath_ParametersPlus & ¬
 							quoted form of POSIX path of SyncSource & " " & ¬
-							quoted form of POSIX path of SyncDest & " " & ¬
+							quoted form of POSIX path of SyncDest & " >> " & ¬
+							quoted form of POSIX path of RealTimeSyncLogsFile)
+						(do shell script ¬
+							rsyncPath_ParametersPlus & ¬
 							quoted form of POSIX path of SyncDest & " " & ¬
 							quoted form of POSIX path of SyncSource & " >> " & ¬
 							quoted form of POSIX path of RealTimeSyncLogsFile)
@@ -409,7 +414,9 @@ script SingleSync
 				(do shell script ¬
 					rsyncPath_ParametersPlus & ¬
 					quoted form of POSIX path of SyncSource & " " & ¬
-					quoted form of POSIX path of SyncDest & " " & ¬
+					quoted form of POSIX path of SyncDest)
+				(do shell script ¬
+					rsyncPath_ParametersPlus & ¬
 					quoted form of POSIX path of SyncDest & " " & ¬
 					quoted form of POSIX path of SyncSource)
 				delay 1
