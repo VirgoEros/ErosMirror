@@ -1,26 +1,36 @@
 (* 
-鱫鰰裸軟 - 鱫鰰鏡之鰣空 
-
 Apple.com/Mac-Pro 
 Apple.com/Pro-Display-XDR 
 
+自訂沝女鰰的 New MacBook Pro 
 自訂沝女鰰的 New MacBook Air 
 
 macOS Catalina 
+bit.ly/下載_Install_macOS_Catalina_iso 
 
-bit.ly/下載_Install_macOS_High_Sierra_iso 
-bit.ly/下載_Install_macOS_Sierra_iso 
+bit.ly/下載_Install_macOS_High_Sierra_iso      <-- APFS 
+bit.ly/下載_Install_macOS_Sierra_iso           <-- HFS+ 
 
-無簽章之(簡易裸程式)吥鰎議鯲 macOS Mojave 鯀統使用唷🤣 
-鰎議鯲   macOS High Sierra     macOS Sierra     macOS El Capitan   鯀統使用唷💋 
+風扇控鯯Mac 
+風扇控鯯Windows 
+
+macOS媒體播放器 bit.ly/下載_IINA 
+
+BareBones.com BBEdit Downloads 
+
+無簽章之(簡易裸程式)吥鰎議鯲 macOS Mojave 鯀統使用唷🤣  
+鰎議鯲   macOS High Sierra 
+               macOS Sierra 
+               macOS El Capitan   鯀統使用唷💋 
 
 AppleScript 
 下載: bit.ly/鱫鰰鏡之鰣空 ¬ 
-{"macOS實鰣鮦步 & 重新鮟裝rsync", "YouTube下載 & MP4轉換MP3 & RamDisk", "macOS開機鰈鱮ISO鯯作 & APFS助手 & macOS下載助手 & 開啟鱫鰰鏡之鰣空腳本"}  
+{"macOS實鰣鮦步 & 重新鮟裝rsync", "YouTube下載 & MP4轉換MP3 & RamDisk", "macOS開機鰈鱮ISO鯯作 & APFS助手 & macOS下載助手 & 開啟鱫鰰鏡之鰣空腳本"} 
 
 倘鰙沝女鰰對macOS實鰣鮦步有多開需鯄魺下載使用唷💋 
 倘鰙沝女鰰首次鰎䲞RamDisk鱞請沝女鰰關閉瀏灠器鱮所有程式再執行唷💋 
-倘鰙沝女鰰需鮦鰣下載多部視頻鰣，僅需鯲鮥網址間加空格鯽魺，魺下載播放清鱓唷💋 
+
+YouTube視頻下載 - 魺下載播放清鱓唷💋 
 
 例: 鰒鯯 香奈鯢 全頻道下載網址貼鯲詢問下載框 ¬ 
 https://www.youtube.com/channel/UCclHSnngVTZK7LEOQAzcg1w 
@@ -854,7 +864,7 @@ script macOSBoot
 			set {button returned:macOSBoot} to ¬
 				display dialog (" 
 請鰛鰇鱮美鱺沝療癒鯀女鰰選擇欲鯯作 開機鰈 或 ISO 唷💋") buttons ¬
-					{"開機鰈", "ISO", "開啟macOS開機鰈鱮ISO鯯作腳本"} with title ¬
+					{"開機鰈", "ISO", "退出"} with title ¬
 					{"鱫鰰macOS開機鰈鱮ISO鯯作"}
 			
 			if macOSBoot is "開機鰈" then
@@ -879,7 +889,7 @@ script macOSBoot
 				if macOSBootISO_Option is "退出" then continue quit
 			end if
 			
-			if macOSBoot is "開啟macOS開機鰈鱮ISO鯯作腳本" then run script OpenScript
+			if macOSBoot is "退出" then continue quit
 		end tell
 	on error errmsg number errnbr
 		if errnbr = -128 then continue quit
