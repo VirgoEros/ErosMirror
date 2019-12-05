@@ -777,8 +777,7 @@ script BatchConversion
 			end try
 		end repeat
 		if isDone is true then
-			set MP3 to Input1 & "_MP3"
-			set MP3 to quoted form of MP3
+			set MP3 to quoted form of (Input1 & "_MP3")
 			do shell script ("cd " & Input2 & ";mv *.mp3 " & MP3 & ";cd ;")
 			do shell script (TerminalNotifier & " -title 轉換鯇成鰳唷💋")
 			do shell script ("open " & MP3)
