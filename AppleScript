@@ -869,7 +869,7 @@ script macOSBoot
 			if macOSBoot is "開機鰈" then
 				set {button returned:macOSBootUSB_Option} to ¬
 					display dialog (" 
-請鰛鰇鱮美鱺沝療癒鯀女鰰選擇欲鯯作 開機鰈 或 ISO 唷💋") buttons ¬
+請鰛鰇鱮美鱺沝療癒鯀女鰰選擇欲鯯作 開機鰈 鯯作選項唷💋") buttons ¬
 						{"新版", "舊版", "退出"} with title ¬
 						{"鱫鰰macOS開機鰈鱮ISO鯯作"}
 				if macOSBootUSB_Option is "新版" then run script macOSBootUSB_NewVersion
