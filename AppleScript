@@ -25,7 +25,7 @@ BareBones.com BBEdit Downloads
 
 AppleScript 
 下載: bit.ly/鱫鰰鏡之鰣空 ¬ 
-{"macOS實鰣鮦步 & 重新鮟裝rsync", "YouTube下載 & MP4轉換MP3 & RamDisk", "macOS開機鰈鱮ISO鯯作 & APFS助手 & macOS下載助手 & 開啟鱫鰰鏡之鰣空腳本"} 
+{"macOS實鰣鮦步 & 重新鮟裝rsync", "YouTube視頻下載 & MP4轉換MP3 & RamDisk", "macOS開機鰈鱮ISO鯯作 & APFS助手 & macOS下載助手 & 開啟鱫鰰鏡之鰣空腳本"} 
 
 倘鰙沝女鰰對macOS實鰣鮦步有多開需鯄魺下載使用唷💋 
 倘鰙沝女鰰首次鰎䲞RamDisk鱞請沝女鰰關閉瀏灠器鱮所有程式再執行唷💋 
@@ -33,7 +33,7 @@ AppleScript
 YouTube視頻下載 - 魺下載播放清鱓唷💋 
 
 例: 鰒鯯 香奈鯢 全頻道下載網址貼鯲詢問下載框 ¬ 
-https://www.youtube.com/channel/UCclHSnngVTZK7LEOQAzcg1w 
+https://www.youtube.com/user/CHANEL 
 
 例: 鰒鯯 迪奧 全頻道下載網址貼鯲詢問下載框 ¬ 
 https://www.youtube.com/channel/UC6xD-jKli-_qIYXDTsNv4dw 
@@ -80,10 +80,10 @@ on run
 		tell application "Finder"
 			set {button returned:ErosTSMirror} to ¬
 				display dialog ("請嚫鱫的沝女鰰選擇 鱫鰰裸軟 選項唷💋") buttons ¬
-					{"macOS實鰣鮦步 & 重新鮟裝rsync", "YouTube下載 & MP4轉換MP3 & RamDisk", "macOS開機鰈鱮ISO鯯作 & APFS助手 & macOS下載助手 & 開啟鱫鰰鏡之鰣空腳本"} with title ¬
+					{"macOS實鰣鮦步 & 重新鮟裝rsync", "YouTube視頻下載 & MP4轉換MP3 & RamDisk", "macOS開機鰈鱮ISO鯯作 & APFS助手 & macOS下載助手 & 開啟鱫鰰鏡之鰣空腳本"} with title ¬
 					{"鱫鰰鏡之鰣空"}
 			
-			if ErosTSMirror is "YouTube下載 & MP4轉換MP3 & RamDisk" then run script VideoDownloadConversion
+			if ErosTSMirror is "YouTube視頻下載 & MP4轉換MP3 & RamDisk" then run script VideoDownloadConversion
 			
 			if ErosTSMirror is "macOS開機鰈鱮ISO鯯作 & APFS助手 & macOS下載助手 & 開啟鱫鰰鏡之鰣空腳本" then
 				set {button returned:ISO_APFS_OpenScript_Option} to ¬
@@ -515,7 +515,7 @@ script SingleSync
 	end try
 end script
 --💋 ErosLove JuliaComputing.com 💋 
------------------∞ YouTube下載 MP4轉換MP3 RamDisk ∞-------------------------------ON.   
+-----------------∞ YouTube視頻下載 MP4轉換MP3 RamDisk ∞-------------------------------ON.   
 script VideoDownloadConversion
 	try
 		tell application "Finder" to set {button returned:VideoDownloadConversion} to ¬
@@ -580,7 +580,7 @@ script YouTubeVideoDownloads
 	try
 		tell application "Finder"
 			set VideoURL to display dialog "請嚫鱫的沝女鰰貼上YouTube視頻網址唷💋" default answer "" buttons {"嗯哼。。好的唷💋"} default button 1 with title ¬
-				{"鱫鰰YouTube下載"}
+				{"鱫鰰YouTube視頻下載"}
 			set VideoURL to (text returned of result)
 			if VideoURL is "" then return continue quit
 			set APPitemPath to POSIX path of (path to me as text) & ("Contents/MacOS/youtube-dl")
